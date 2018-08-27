@@ -3,7 +3,7 @@
 // var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
 //   'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
 // ];
-
+var scoreArray = [];
 var wordGuessArray = [];
 var countTries = 0;
 var maxTries = 5;
@@ -37,6 +37,7 @@ function compareGuess(event) {
         loseTurn++;
         console.log(countTries);
         revealLetter(i);
+        scoreTally(wordGuess);
       }
     }
   } else if (wordGuessArray.indexOf(wordGuess) > -1) {
@@ -76,4 +77,13 @@ function revealLetter(i) {
   var letterLine = document.getElementById('blank-words');
   var letterSpot = letterLine.getElementsByTagName('P').item(i);
   letterSpot.textContent = vocabulary[i];
+}
+
+function scoreTally(wordGuess) {
+  for (var i = 0; i < score.length; i++) {
+    if (score[i].letters.indexOf(wordGuess) > -1) {
+      scoreArray.push(score[i].points * (1 + (maxTries / 10))); //scoring formula
+    }
+  }
+    console.log(scoreArray);
 }
