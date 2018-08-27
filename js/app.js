@@ -36,6 +36,7 @@ function compareGuess(event) {
         countTries++;
         loseTurn++;
         console.log(countTries);
+        revealLetter(i);
       }
     }
   } else if (wordGuessArray.indexOf(wordGuess) > -1) {
@@ -53,7 +54,26 @@ function compareGuess(event) {
     return (1);
   } else if (maxTries <= 0) {
     alert('You Lose!');
+    for (var j = 0; j < vocabulary.length; j++) {
+      revealLetter(j);
+    }
     return (1);
   }
   return (0);
+}
+
+function initializeWords() {
+  var wordLine = document.getElementById('blank-words');
+  for (var i = 0; i < vocabulary.length; i++) {
+    var blurLines = document.createElement('P');
+    blurLines.textContent = '_';
+    wordLine.appendChild(blurLines);
+  }
+}
+initializeWords();
+
+function revealLetter(i) {
+  var letterLine = document.getElementById('blank-words');
+  var letterSpot = letterLine.getElementsByTagName('P').item(i);
+  letterSpot.textContent = vocabulary[i];
 }
