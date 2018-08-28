@@ -24,11 +24,11 @@ valueChange = 0;
 maxvalue = 100;
 
 function drawprogressBar(){
-  ctx.fillStyle = 'gray';
+  ctx.fillStyle = 'sandybrown';
   ctx.clearRect(0, 0, progressBar.width, progressBar.height);
   ctx.fillRect(0, 0, width, height);
 
-  ctx.fillStyle = 'red';
+  ctx.fillStyle = '#3d3c3c';
   var fillValue = Math.min(Math.max(valueChange / maxvalue, 0), 1);
   ctx.fillRect(0, 0, fillValue * width, height);
 }
