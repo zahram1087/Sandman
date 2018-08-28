@@ -2104,7 +2104,7 @@ var results = [
     {
         "definition": "a building which is an addition to an existing building",
         "type": "",
-        "word": "Annex "
+        "word": "Annex"
     },
     {
         "definition": "blame",

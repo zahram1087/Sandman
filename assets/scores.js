@@ -29,4 +29,4 @@ var score = [
     points: 100,
     letters: ['Q','Z'],
   },
-]
+];
