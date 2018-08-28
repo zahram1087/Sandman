@@ -1,0 +1,17 @@
+canvas{
+  color:blue;
+  border: red dashed 2px;
+  padding:15px;
+};
+
+body {
+  width: 10%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+
+#sandlayer {
+ z-index: 0;
+}
