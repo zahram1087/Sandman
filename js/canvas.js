@@ -2,7 +2,7 @@
 //sandman will have limbs disappear as the user gueses the wrong words such that it appears as thought the sandman is sinking.
 
 //draw the stickman
-
+'use strict';
 var hangman = function() {
   var myStickmanEl = document.getElementById('sandman');
   var ctx = myStickmanEl.getContext('2d'); //get context object
@@ -203,4 +203,3 @@ function sandAnimation() {
 sandAnimation();
 sandAnimation();
 sandAnimation();
-

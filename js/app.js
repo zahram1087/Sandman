@@ -4,10 +4,12 @@ var alphabet = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D',
   'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M'
 ];
 
+var options = ['PLAY AGAIN', 'ENTER SCORE'];
+
 var scoreArray = [];
 var wordGuessArray = [];
 var countTries = 0;
-var maxTries = 5;
+var maxTries = 8;
 var playOrNot = true;
 //eslint-disable-next-line
 var vocabulary = results[generateRandom()].word.toUpperCase().split('');
@@ -35,9 +37,18 @@ document.addEventListener('click', function(event) {
   }
 });
 
+document.addEventListener('click', function(event) {
+  if (event.target.textContent === 'PLAY AGAIN') {
+    storePersonalScore(computeScore());
+    location.reload();
+  } else if (event.target.textContent === 'ENTER SCORE') {
+    arrangeScore('Dan', storePersonalScore(computeScore()));
+    location.reload();
+  }
+});
+
 function compareGuess(event, wordGuess) {
   var loseTurn = 0;
-  console.log(wordGuess);
   changeKeyColor(wordGuess);
   if (wordGuessArray.indexOf(wordGuess) === -1) {
     wordGuessArray.push(wordGuess);
@@ -57,12 +68,12 @@ function compareGuess(event, wordGuess) {
 
   if (loseTurn === 0) {
     maxTries--;
+    drawprogressBar(maxTries);
     console.log(`Turns Left: ${maxTries}`);
   }
 
   if (countTries === vocabulary.length) {
-    alert('You Win!');
-    return (false);
+    youWon();
   } else if (maxTries <= 0) {
     alert('You Lose!');
     for (var j = 0; j < vocabulary.length; j++) {
@@ -87,15 +98,6 @@ function revealLetter(i) {
   var letterLine = document.getElementById('blank-words');
   var letterSpot = letterLine.getElementsByTagName('P').item(i);
   letterSpot.textContent = vocabulary[i];
-}
-
-function scoreTally(wordGuess) {
-  for (var i = 0; i < score.length; i++) {
-    if (score[i].letters.indexOf(wordGuess) > -1) {
-      scoreArray.push(score[i].points * (1 + (maxTries / 10))); //scoring formula
-    }
-  }
-  console.log(scoreArray);
 }
 
 renderKeyBoard();
@@ -138,5 +140,21 @@ function changeKeyColor(wordGuess) {
         listKeys[j].style.backgroundColor = 'green';
       }
     }
+  }
+}
+
+function youWon() {
+  var keyBlocks = document.getElementById('keyboard');
+  keyBlocks.innerHTML = '';
+  var congratMessage = document.createElement('P');
+  congratMessage.textContent = 'CONGRATULATIONS, YOU WON!';
+  congratMessage.style.fontSize = '35px';
+  keyBlocks.appendChild(congratMessage);
+  var makeRow = document.createElement('UL');
+  for (var i = 0; i < 2; i++) {
+    var makeListItem = document.createElement('LI');
+    makeListItem.textContent = options[i];
+    makeRow.appendChild(makeListItem);
+    keyBlocks.appendChild(makeRow);
   }
 }

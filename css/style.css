@@ -234,6 +234,8 @@ main .wordDisplay{
     color: grey;
 }
 
+/*This is for the KeyBoard and Word Layout*/
+
 #blank-words {
   align-content: center;
   text-align: center;
@@ -243,7 +245,7 @@ main .wordDisplay{
 
 #blank-words p {
   display: inline-block;
-  font-size: 50px;
+  font-size: 32px;
   padding-right: 10px;
   margin-bottom: 50px;
   margin-top: 50px;
@@ -262,5 +264,17 @@ main .wordDisplay{
   padding: 10px;
   border: 3px solid black;
   border-radius: 5px;
-  width: 45px;
+  background-color: white;
+  align-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#keyboard ul li:hover {
+  background-color: yellow;
+}
+
+#progressBar {
+  margin-bottom: 50px;
 }

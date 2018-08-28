@@ -1,15 +1,16 @@
-
-
+//
+//
+'use strict';
 var progressBar = document.getElementById('progressBar'),
   ctx = progressBar.getContext('2d');
-
-
-var clickEl = document.getElementById('missClick');
-clickEl.addEventListener('click', missCounter);
-function missCounter(){
-  valueChange = valueChange + 20;
-  drawprogressBar();
-}
+//
+//
+// var clickEl = document.getElementById('missClick');
+// clickEl.addEventListener('click', missCounter);
+// function missCounter(){
+//   valueChange = valueChange + 20;
+//   drawprogressBar();
+// }
 
 
 var width = width,
@@ -17,24 +18,26 @@ var width = width,
   maxvalue = maxvalue,
   valueChange = valueChange;
 
+const TOTAL_TRIES = 8;
+
 // draw the background
 width = 800;
 height = 200;
 valueChange = 0;
 maxvalue = 100;
 
-function drawprogressBar(){
+function drawprogressBar(valueChange){
   ctx.fillStyle = 'sandybrown';
   ctx.clearRect(0, 0, progressBar.width, progressBar.height);
   ctx.fillRect(0, 0, width, height);
 
   ctx.fillStyle = '#3d3c3c';
-  var fillValue = Math.min(Math.max(valueChange / maxvalue, 0), 1);
+  var fillValue = 1 - (valueChange / TOTAL_TRIES);
   ctx.fillRect(0, 0, fillValue * width, height);
 }
 
 
-drawprogressBar();
+drawprogressBar(maxTries);
 
 
 
