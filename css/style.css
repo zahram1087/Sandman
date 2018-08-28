@@ -113,6 +113,11 @@ main .wrapper{
     border: 1px dashed black;
 }
 
+/* #sandlayer {
+    z-index: 0;
+   } */
+
+
 main .scoreColumn{
     float: right;
     padding-right: 50px;
