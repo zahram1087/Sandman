@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Press+Start+2P" rel="stylesheet">
     
 </head>
 <body>
@@ -14,9 +15,9 @@
 
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#">Rules</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
 
@@ -34,36 +35,39 @@
 
 
     <div class="wrapper">
-    <canvas id= "sandman"></canvas>
-    <table id ="scoreboard" class="table">
-        <thead>
-            <tr>
-                <th>Rank</th>
+        <canvas id= "sandman"></canvas>
+        <section class = "scoreColumn">
+            <p id="highScore">High Scores!</p>
+            <table id ="scoreboard" class="table">
+                <thead>
+                <tr>
+                <th></th>
                 <th>Username</th>
                 <th>Score</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>bob</td>
-                <td>1000</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>bob</td>
-                <td>1000</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>bob</td>
-                <td>1000</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>bob</td>
-                <td>1000</td>
-            </tr>
-        </thead>
-    </table>
+                </tr>
+                <tr class="user">
+                    <td>1</td>
+                    <td>bob</td>
+                    <td>1000</td>
+                </tr>
+                <tr class="user">
+                    <td>1</td>
+                    <td>bob</td>
+                    <td>1000</td>
+                </tr>
+                 <tr class="user">
+                    <td>1</td>
+                    <td>bob</td>
+                    <td>1000</td>
+                </tr>
+                <tr class="user">
+                 <td>1</td>
+                 <td>bob</td>
+                 <td>1000</td>
+                </tr>
+                </thead>
+            </table>
+        </section>
     </div>
 
 
