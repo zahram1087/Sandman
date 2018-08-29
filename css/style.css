@@ -2,6 +2,9 @@
 /* * {
     outline: orange dashed 1px;
 } */
+*{
+    outline: dashed 1px red;
+}
 
 body{
     width: 1024px;
@@ -107,15 +110,28 @@ main .wrapper{
 }
 
 #sandman{
+    z-index:0;
+    position: absolute; 
+    left: 0px;
+    top: 0px;
+    width: 500px;
+    height: 500px;
+}
+#sandlayer{
+    z-index:1;
+    position: absolute; 
+    left: 0px;
+    top: 0px;
+    width: 500px;
+    height: 500px;
+}
+/* #sandman{
     width: 67%;
     height: 500px;
     display: inline-block;
     border: 1px dashed black;
-}
+} */
 
-/* #sandlayer {
-    z-index: 0;
-   } */
 
 
 main .scoreColumn{
@@ -263,4 +279,36 @@ main .wordDisplay{
   border: 3px solid black;
   border-radius: 5px;
   width: 45px;
+}
+
+/* List Element that contains the rules  */
+
+nav ul li {
+    color: sandybrown;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+ #thing-text{
+    position: absolute;
+    left: 0;
+    transition: opacity 1s;
+    display: none;
+    width: 125px;
+    background-color: red;
+    text-align: center;
+    border-radius: 7px;
+    padding: 6px 0;  
+    top: 0;
+    
+    border-style: solid;
+    border-color: blue transparent transparent transparent;
+    margin-left: -5px;
+    border-width: 5px;
+}
+
+
+#thing:hover ~ #thing-text{
+    display: block;
+   
 }
