@@ -82,8 +82,8 @@ header .banner p2{
 
 
 #progressBar{
-    height: 40px;
-    width: 800px;
+    height: 20px;
+    width: 500px;
     margin: 0 auto;
     display: inline-block;
     background-color: lightskyblue
@@ -120,10 +120,12 @@ main .wrapper{
 
 main .scoreColumn{
     float: right;
-    padding: 10px;
-    margin-right: 25px;
+    padding: 5px;
+    margin-right: 15px;
     text-align: center;
     background-color: #3d3c3c;
+    width: 290px;
+    overflow-x: auto;
 
 }
 #highScore{
@@ -144,7 +146,7 @@ main .table{
 }
 
 th, td{
-    padding: 0px 50px 10px 10px;
+    padding: 0px 38px 10px 20px;
     color: sandybrown;
     background-color: #3d3c3c;
     text-align: left;
@@ -266,7 +268,6 @@ main .wordDisplay{
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px;
   padding-bottom: 40px;
 }
 
