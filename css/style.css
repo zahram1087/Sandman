@@ -98,7 +98,7 @@ main{
 }
 
 main .wrapper{
-   padding-top: 30px;
+    padding-top: 30px;
     width: 1004px;
     margin-right: 0px;
     background-color: lightskyblue;
@@ -120,8 +120,10 @@ main .wrapper{
 
 main .scoreColumn{
     float: right;
-    padding-right: 50px;
+    padding: 10px;
+    margin-right: 25px;
     text-align: center;
+    background-color: #3d3c3c;
 
 }
 #highScore{
@@ -130,7 +132,6 @@ main .scoreColumn{
 
     font-size: 20px;
     color: sandybrown;
-    background-color: #3d3c3c;
     height: 50px;
     padding-top: 10px;
 
@@ -143,9 +144,10 @@ main .table{
 }
 
 th, td{
-    padding: 5px;
+    padding: 0px 50px 10px 10px;
     color: sandybrown;
     background-color: #3d3c3c;
+    text-align: left;
 }
 
 tr.user :nth-child(2){
@@ -167,7 +169,7 @@ tr.user :nth-child(3){
 /* Game interaction section */
 
 main .interaction{
-    width: 1024px;;
+    width: 67%;
     display: block;
 }
 
@@ -258,17 +260,28 @@ main .wordDisplay{
   margin-right: auto;
 }
 
-#keyboard ul li {
-  display: inline-block;
-  font-size: 25px;
-  padding: 10px;
-  border: 3px solid black;
-  border-radius: 5px;
-  background-color: white;
+#keyboard {
+  width: 686 px;
   align-content: center;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
+  padding-bottom: 40px;
+}
+
+#keyboard p {
+  margin-bottom: 30px;
+}
+
+#keyboard ul li {
+  display: inline-block;
+  font-size: 25px;
+  padding: 12px;
+  border: 3px solid black;
+  border-radius: 5px;
+  background-color: white;
+  margin: 5px;
 }
 
 #keyboard ul li:hover {

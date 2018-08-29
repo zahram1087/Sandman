@@ -4584,7 +4584,7 @@ var results = [
     {
         "definition": "formalities; paperwork; official procedure",
         "type": "",
-        "word": "Red tape"
+        "word": "RedTape"
     },
     {
         "definition": "grumpy; rude",

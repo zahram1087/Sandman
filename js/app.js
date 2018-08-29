@@ -1,7 +1,7 @@
 'use strict';
 
 var alphabet = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D',
-  'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M'
+  'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'HINT'
 ];
 
 var options = ['PLAY AGAIN', 'ENTER SCORE'];
@@ -15,6 +15,12 @@ var playOrNot = true;
 var vocabulary = results[generateRandom()].word.toUpperCase().split('');
 
 console.log(vocabulary);
+
+//Start
+initializeWords();
+renderKeyBoard();
+renderHighScore();
+
 
 function generateRandom() {
   var randomGenerator = Math.floor(Math.random() * 999);
@@ -39,13 +45,39 @@ document.addEventListener('click', function(event) {
 
 document.addEventListener('click', function(event) {
   if (event.target.textContent === 'PLAY AGAIN') {
+    if (maxTries === 0) {
+      localStorage.removeItem('userScore');
+    }
     storePersonalScore(computeScore());
     location.reload();
   } else if (event.target.textContent === 'ENTER SCORE') {
-    arrangeScore('Dan', storePersonalScore(computeScore()));
-    location.reload();
+    hallOfFame();
   }
 });
+
+function hallOfFame() {
+  var inputName = prompt('Please Enter Your Name');
+  var checkValue = arrangeScore(inputName, storePersonalScore(computeScore()));
+  var reference = JSON.parse(localStorage.getItem('keepScore'));
+  if (checkScore(checkValue, reference) === true) {
+    alert('Congrats! You made the High Score list');
+  } else {
+    alert('Sorry, You did not make it onto the High Score list');
+  }
+  renderHighScore();
+  scoreArray = [];
+}
+
+function checkScore(checkValue, reference) {
+  for (var i = 0; i < reference.length; i++) {
+    if (reference[i].name === checkValue[0] && reference[i].points === checkValue[1]) {
+      return true;
+    }
+  }
+  return false;
+}
+
+
 
 function compareGuess(event, wordGuess) {
   var loseTurn = 0;
@@ -63,7 +95,7 @@ function compareGuess(event, wordGuess) {
     }
   } else if (wordGuessArray.indexOf(wordGuess) > -1) {
     loseTurn++;
-    alert('Come On, you already guessed this word.');
+    alert('You already guessed this word.');
   }
 
   if (loseTurn === 0) {
@@ -73,15 +105,17 @@ function compareGuess(event, wordGuess) {
   }
 
   if (countTries === vocabulary.length) {
-    youWon();
+    gameOver(maxTries);
+    return false;
   } else if (maxTries <= 0) {
-    alert('You Lose!');
+    scoreArray = [];
+    gameOver(maxTries);
     for (var j = 0; j < vocabulary.length; j++) {
       revealLetter(j);
     }
-    return (false);
+    return false;
   }
-  return (true);
+  return true;
 }
 
 function initializeWords() {
@@ -92,15 +126,12 @@ function initializeWords() {
     wordLine.appendChild(blurLines);
   }
 }
-initializeWords();
 
 function revealLetter(i) {
   var letterLine = document.getElementById('blank-words');
   var letterSpot = letterLine.getElementsByTagName('P').item(i);
   letterSpot.textContent = vocabulary[i];
 }
-
-renderKeyBoard();
 
 function renderKeyBoard() {
   var keyboardRows = document.getElementById('keyboard');
@@ -143,12 +174,16 @@ function changeKeyColor(wordGuess) {
   }
 }
 
-function youWon() {
+function gameOver(maxTries) {
   var keyBlocks = document.getElementById('keyboard');
   keyBlocks.innerHTML = '';
   var congratMessage = document.createElement('P');
-  congratMessage.textContent = 'CONGRATULATIONS, YOU WON!';
-  congratMessage.style.fontSize = '35px';
+  if (maxTries > 0) {
+    congratMessage.textContent = 'CONGRATULATIONS, YOU WON!';
+  } else if (maxTries === 0) {
+    congratMessage.textContent = 'OH NO, YOU LOST!';
+  }
+  congratMessage.style.fontSize = '30px';
   keyBlocks.appendChild(congratMessage);
   var makeRow = document.createElement('UL');
   for (var i = 0; i < 2; i++) {

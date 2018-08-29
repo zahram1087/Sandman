@@ -25,6 +25,7 @@ function arrangeScore(name, points) {
   }
   localStorage.setItem('keepScore', JSON.stringify(userHighScore));
   localStorage.removeItem('userScore');
+  return [name, points];
 }
 
 function scoreTally(wordGuess) {
@@ -62,4 +63,30 @@ function storePersonalScore(tallyValue) {
     localStorage.setItem('userScore', JSON.stringify(personalScore));
   }
   return personalScore;
+}
+
+function renderHighScore() {
+  var scoreList = JSON.parse(localStorage.getItem('keepScore'));
+  var highScoreTable = document.getElementById('scoreboard');
+  if (scoreList !== null) {
+    highScoreTable.innerHTML = '';
+    var rowHead = document.createElement('TR');
+    var nameHead = document.createElement('TH');
+    nameHead.textContent = 'Name';
+    var scoreHead = document.createElement('TH');
+    scoreHead.textContent = 'Score';
+    rowHead.appendChild(nameHead);
+    rowHead.appendChild(scoreHead);
+    highScoreTable.appendChild(rowHead);
+    for (var i = 0; i < scoreList.length; i++) {
+      var scoreRow = document.createElement('TR');
+      var scoreName = document.createElement('TD');
+      scoreName.textContent = scoreList[i].name;
+      var scorePoints = document.createElement('TD');
+      scorePoints.textContent = scoreList[i].points;
+      scoreRow.appendChild(scoreName);
+      scoreRow.appendChild(scorePoints);
+      highScoreTable.appendChild(scoreRow);
+    }
+  }
 }
