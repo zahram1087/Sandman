@@ -16,7 +16,14 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">Rules</a></li>
+                <li id = "thing">Rules</li>
+                <ol id = "thing-text">
+                    <li >The rules ara</li>
+                    <li >The rules ara</li>
+                    <li >The rules ara</li>
+                    <li >The rules ara</li>
+                  </ol>
+
                 <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
@@ -31,7 +38,10 @@
 
 <main>
     <div class="wrapper">
-        <canvas id= "sandman"></canvas>
+        <div id="canvasContainer">
+            <canvas id= "sandman"></canvas>
+            <canvas id= "sandlayer"></canvas>
+        </div>
         <section class = "scoreColumn">
             <p id="highScore">High Scores!</p>
             <table id ="scoreboard" class="table"></table>
@@ -45,10 +55,11 @@
     </div>
 
 </main>
+<!-- <canvas id="sandlayer"></canvas>
+<canvas id= "sandman" ></canvas> -->
 
 <script src="assets/scores.js" type="text/javascript"></script>
 <script src="assets/majortests_words.js" type="text/javascript"></script>
-<!-- <canvas id="sandlayer" stlye= "z-index:1; position: absolute; left: 0px; top: opx"></canvas> -->
 
 <!-- <canvas id="sandman" width="400px" height="400px" style = "z-index:1; position: absolute; left: 0px; top: opx"></canvas> -->
     <script src="js/highScore.js"></script>
