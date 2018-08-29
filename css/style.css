@@ -1,6 +1,6 @@
 
 * {
-    outline: orange dashed 1px;
+
 }
 
 body{
@@ -82,8 +82,8 @@ header .banner p2{
 
 
 #progressBar{
-    height: 40px;
-    width: 800px;
+    height: 20px;
+    width: 500px;
     margin: 0 auto;
     display: inline-block;
     background-color: lightskyblue
@@ -98,7 +98,7 @@ main{
 }
 
 main .wrapper{
-   padding-top: 30px;
+    padding-top: 30px;
     width: 1004px;
     margin-right: 0px;
     background-color: lightskyblue;
@@ -111,7 +111,6 @@ main .wrapper{
     display: inline-block;
     height:500px;
     width: 67%;
-    border: 3px dashed black;
     z-index:0;
 
 }
@@ -147,8 +146,12 @@ main .wrapper{
 
 main .scoreColumn{
     float: right;
-    padding-right: 50px;
+    padding: 5px;
+    margin-right: 15px;
     text-align: center;
+    background-color: #3d3c3c;
+    width: 290px;
+    overflow-x: auto;
 
 }
 #highScore{
@@ -157,7 +160,6 @@ main .scoreColumn{
 
     font-size: 20px;
     color: sandybrown;
-    background-color: #3d3c3c;
     height: 50px;
     padding-top: 10px;
 
@@ -170,9 +172,10 @@ main .table{
 }
 
 th, td{
-    padding: 5px;
+    padding: 0px 38px 10px 20px;
     color: sandybrown;
     background-color: #3d3c3c;
+    text-align: left;
 }
 
 tr.user :nth-child(2){
@@ -194,7 +197,7 @@ tr.user :nth-child(3){
 /* Game interaction section */
 
 main .interaction{
-    width: 1024px;;
+    width: 67%;
     display: block;
 }
 
@@ -261,6 +264,8 @@ main .wordDisplay{
     color: grey;
 }
 
+/*This is for the KeyBoard and Word Layout*/
+
 #blank-words {
   align-content: center;
   text-align: center;
@@ -270,7 +275,7 @@ main .wordDisplay{
 
 #blank-words p {
   display: inline-block;
-  font-size: 50px;
+  font-size: 32px;
   padding-right: 10px;
   margin-bottom: 50px;
   margin-top: 50px;
@@ -283,13 +288,35 @@ main .wordDisplay{
   margin-right: auto;
 }
 
+#keyboard {
+  width: 686 px;
+  align-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 40px;
+}
+
+#keyboard p {
+  margin-bottom: 30px;
+}
+
 #keyboard ul li {
   display: inline-block;
   font-size: 25px;
-  padding: 10px;
+  padding: 12px;
   border: 3px solid black;
   border-radius: 5px;
-  width: 45px;
+  background-color: white;
+  margin: 5px;
+}
+
+#keyboard ul li:hover {
+  background-color: yellow;
+}
+
+#progressBar {
+  margin-bottom: 50px;
 }
 
 /* List Element that contains the rules  */
@@ -309,9 +336,9 @@ nav ul li {
     background-color: red;
     text-align: center;
     border-radius: 7px;
-    padding: 6px 0;  
+    padding: 6px 0;
     top: 0;
-    
+
     border-style: solid;
     border-color: blue transparent transparent transparent;
     margin-left: -5px;
@@ -321,5 +348,5 @@ nav ul li {
 
 #thing:hover ~ #thing-text{
     display: block;
-   
+
 }

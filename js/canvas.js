@@ -1,5 +1,11 @@
-// Sandman
-// sandman will have limbs disappear as the user gueses the wrong words such that it appears as thought the sandman is sinking.
+//Sandman
+//sandman will have limbs disappear as the user gueses the wrong words such that it appears as thought the sandman is sinking.
+
+//draw the stickman
+'use strict';
+
+
+//Attempting to display the sand  on top of stickman on click
 
 // draw the stickman
 function sandAnimation() {
@@ -202,7 +208,3 @@ function sandAnimation() {
   initArray();
 }
 sandAnimation();
-
-
-// var container = document.getElementById('canvasContainer');
-

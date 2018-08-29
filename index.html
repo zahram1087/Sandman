@@ -23,11 +23,11 @@
                     <li >The rules ara</li>
                     <li >The rules ara</li>
                   </ol>
-          
+
                 <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
-        
+
 
         <section class="banner">
             <h1 id="title">Sandman</h1>
@@ -37,10 +37,6 @@
     </header>
 
 <main>
-    <button id="missClick">Click for a miss</button>
-    <canvas id="progressBar" width="800" height="200"></canvas>
-
-
     <div class="wrapper">
         <div id="canvasContainer">
             <canvas id= "sandman"></canvas>
@@ -48,42 +44,13 @@
         </div>
         <section class = "scoreColumn">
             <p id="highScore">High Scores!</p>
-            <table id ="scoreboard" class="table">
-                <thead>
-                <tr>
-                <th></th>
-                <th>Username</th>
-                <th>Score</th>
-                </tr>
-                <tr class="user">
-                    <td>1</td>
-                    <td>bob</td>
-                    <td>1000</td>
-                </tr>
-                <tr class="user">
-                    <td>1</td>
-                    <td>bob</td>
-                    <td>1000</td>
-                </tr>
-                 <tr class="user">
-                    <td>1</td>
-                    <td>bob</td>
-                    <td>1000</td>
-                </tr>
-                <tr class="user">
-                 <td>1</td>
-                 <td>bob</td>
-                 <td>1000</td>
-                </tr>
-                </thead>
-            </table>
+            <table id ="scoreboard" class="table"></table>
         </section>
 
     </div>
-
-
     <div class = "interaction">
       <section id="blank-words"></section>
+      <canvas id="progressBar" width="800" height="20"></canvas>
       <section id="keyboard"></section>
     </div>
 
@@ -94,8 +61,10 @@
 <script src="assets/scores.js" type="text/javascript"></script>
 <script src="assets/majortests_words.js" type="text/javascript"></script>
 
+<!-- <canvas id="sandman" width="400px" height="400px" style = "z-index:1; position: absolute; left: 0px; top: opx"></canvas> -->
+    <script src="js/highScore.js"></script>
+    <script src="js/app.js"></script>
     <script src= "js/progressBar.js"></script>
     <script src="js/canvas.js"></script>
-    <script src="js/app.js"></script>
 </body>
 </html>
