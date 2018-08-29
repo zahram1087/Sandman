@@ -106,13 +106,30 @@ main .wrapper{
 
 }
 
-#sandman{
+/* #canvasContainer{
+    position:relative;
+    height:500px;
     width: 67%;
-    height: 500px;
     display: inline-block;
     border: 1px dashed black;
+    margin-left: 300px;
+} */
+
+#sandman{
+    /* width: 67%;
+    height: 500px;
+    display: inline-block;
+    border: 1px dashed black; */
+    position: absolute;
+    left: 0px;
+    top: 0px;
 }
 
+#sandlayer{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
 /* #sandlayer {
     z-index: 0;
    } */

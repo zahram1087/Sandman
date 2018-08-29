@@ -1,7 +1,7 @@
-//Sandman
-//sandman will have limbs disappear as the user gueses the wrong words such that it appears as thought the sandman is sinking.
+// Sandman
+// sandman will have limbs disappear as the user gueses the wrong words such that it appears as thought the sandman is sinking.
 
-//draw the stickman
+// draw the stickman
 
 var hangman = function() {
   var myStickmanEl = document.getElementById('sandman');
@@ -54,17 +54,17 @@ hangman();
 function sandAnimation() {
   var sandlayerEl = document.getElementById('sandlayer');
   var ctx = sandlayerEl.getContext('2d');
-  var width = ctx.canvas.width = 400 ;
+  var width = ctx.canvas.width = 500 ;
   var height = ctx.canvas.height = 400 ;
   var rightButtonClicked = false;
   var leftButtonClicked = false;
   var mouseX, mouseY;
   var time = 0;
 
-  if (width>height){
-    width = height;
-  }
-  else { height = width;}
+  // if (width>height){
+  //   width = height;
+  // }
+  // else { height = width;}
 
   var res = { // controls sand speed and size
     x: 120,
@@ -201,6 +201,6 @@ function sandAnimation() {
   initArray();
 }
 sandAnimation();
-sandAnimation();
-sandAnimation();
+// sandAnimation();
+// sandAnimation();
 
