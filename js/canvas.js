@@ -12,9 +12,9 @@ function sandAnimation() {
   var hangman = function() {
     var myStickmanEl = document.getElementById('sandman');
     var ctx = myStickmanEl.getContext('2d'); //get context object
-    var startingX = 140;
-    var headY = 40;
-    var headSize = 15;
+    var startingX = 160;
+    var headY = 30;
+    var headSize = 10;
 
     ctx.beginPath();
     ctx.strokeStyle = 'black';
@@ -25,26 +25,26 @@ function sandAnimation() {
     //body
     ctx.beginPath();
     ctx.moveTo(startingX,headY+headSize);
-    ctx.lineTo(startingX,startingX-headY);
+    ctx.lineTo(startingX,headY+3*headSize);
     ctx.strokeStyle = 'black';
     ctx.stroke();
 
     //arms
     ctx.beginPath();
     ctx.strokeStyle = 'black';
-    ctx.moveTo(startingX,startingX-75);
-    ctx.lineTo(startingX+20,headY*2);
-    ctx.moveTo(startingX,startingX-75);
-    ctx.lineTo(startingX-20,headY*2);
+    ctx.moveTo(startingX,headY+1.5*headSize);
+    ctx.lineTo(startingX+headSize,headY + 2.5*headSize);
+    ctx.moveTo(startingX,headY+1.5*headSize);
+    ctx.lineTo(startingX-headSize,headY + 2.5*headSize);
     ctx.stroke();
 
     //legs
     ctx.beginPath();
     ctx.strokeStyle ='black';
-    ctx.moveTo(startingX,startingX-headY);
-    ctx.lineTo(startingX+headSize*1.5,135);
-    ctx.moveTo(startingX,startingX-headY);
-    ctx.lineTo(startingX-headSize*1.5,135);
+    ctx.moveTo(startingX,headY+3*headSize);
+    ctx.lineTo(startingX+headSize*1.2,headY+headSize*4);
+    ctx.moveTo(startingX,headY+3*headSize);
+    ctx.lineTo(startingX-headSize*1.2,headY+headSize*4);
     ctx.stroke();
 
   };
@@ -71,7 +71,7 @@ function sandAnimation() {
 
   var sandArea = {
     x: 72,
-    y: 70
+    y: 80
   };
 
   var block = {
