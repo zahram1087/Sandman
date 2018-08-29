@@ -291,3 +291,35 @@ main .wordDisplay{
   border-radius: 5px;
   width: 45px;
 }
+
+/* List Element that contains the rules  */
+
+nav ul li {
+    color: sandybrown;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+ #thing-text{
+    position: absolute;
+    left: 0;
+    transition: opacity 1s;
+    display: none;
+    width: 125px;
+    background-color: red;
+    text-align: center;
+    border-radius: 7px;
+    padding: 6px 0;  
+    top: 0;
+    
+    border-style: solid;
+    border-color: blue transparent transparent transparent;
+    margin-left: -5px;
+    border-width: 5px;
+}
+
+
+#thing:hover ~ #thing-text{
+    display: block;
+   
+}
