@@ -95,7 +95,7 @@ function compareGuess(event, wordGuess) {
     }
   } else if (wordGuessArray.indexOf(wordGuess) > -1) {
     loseTurn++;
-    alert('You already guessed this word.');
+    alert('You already guessed this letter.');
   }
 
   if (loseTurn === 0) {
