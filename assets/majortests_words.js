@@ -4314,7 +4314,7 @@ var results = [
     {
         "definition": "1. to annoy; aggravate; vex; 2. shred",
         "type": "",
-        "word": "Grate "
+        "word": "Grate"
     },
     {
         "definition": "cannot be cancelled; unchangeable",

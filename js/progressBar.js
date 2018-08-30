@@ -13,27 +13,27 @@ var progressBar = document.getElementById('progressBar'),
 // }
 
 
-var width = width,
-  height = height,
+var widthBar = widthBar,
+  heightBar = heightBar,
   maxvalue = maxvalue,
   valueChange = valueChange;
 
 const TOTAL_TRIES = 8;
 
 // draw the background
-width = 800;
-height = 200;
+widthBar = 670;
+heightBar = 20;
 valueChange = 0;
 maxvalue = 100;
 
 function drawprogressBar(valueChange){
   ctx.fillStyle = 'sandybrown';
-  ctx.clearRect(0, 0, progressBar.width, progressBar.height);
-  ctx.fillRect(0, 0, width, height);
+  ctx.clearRect(0, 0, progressBar.widthBar, progressBar.heightBar);
+  ctx.fillRect(0, 0, widthBar, heightBar);
 
   ctx.fillStyle = '#3d3c3c';
   var fillValue = 1 - (valueChange / TOTAL_TRIES);
-  ctx.fillRect(0, 0, fillValue * width, height);
+  ctx.fillRect(0, 0, fillValue * widthBar, heightBar);
 }
 
 

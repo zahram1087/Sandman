@@ -4,7 +4,7 @@ body{
     margin: 0 auto;
     font-family: 'Press Start 2P', cursive;
     /* zahra add */
-    position: relative; 
+    position: relative;
 
 
 }
@@ -264,7 +264,6 @@ nav ul li {
 .list{
     color: black;
     margin: 10px;
-
 }
 
  #thing-text{
@@ -274,11 +273,9 @@ nav ul li {
     display: none;
     width: 50%;
     background-color: sandybrown;
-    text-align: center;
     border-radius: 7px;
     padding: 20px 0;
-    
-
+    text-align: left;
     border-style: solid;
     border-color:white transparent transparent transparent;
     margin-left: -5px;
@@ -314,12 +311,12 @@ body.has-overlay::after {
     text-align: center;
 }
 
-/* 
+/*
 THIS STYLING IS FOR THE WELCOME/TITLE PAGE-ZAHRA */
 
 /* html{
     background-color: gray;
- 
+
 } */
    div h1 {
     line-height: .95;
@@ -328,9 +325,9 @@ THIS STYLING IS FOR THE WELCOME/TITLE PAGE-ZAHRA */
     font-size: 150px;
     text-transform: uppercase;
     pointer-events: none;
-    
+
   }
-  
+
   .center {
     position: absolute;
     top: 0;
@@ -342,7 +339,7 @@ THIS STYLING IS FOR THE WELCOME/TITLE PAGE-ZAHRA */
     text-align: center;
     background-color: gray;
   }
-  
+
   .play {
     margin: 0 auto;
     margin-top: 10%;
@@ -366,7 +363,7 @@ THIS STYLING IS FOR THE WELCOME/TITLE PAGE-ZAHRA */
     appearance: none;
     cursor: pointer;
   }
-  
+
   .play:hover {
     background: #66fcf1;
     color: #10151B;
@@ -395,9 +392,8 @@ THIS STYLING IS FOR THE WELCOME/TITLE PAGE-ZAHRA */
     appearance: none;
     cursor: pointer;
   }
-  
+
   .about:hover {
     background: #66fcf1;
     color: #10151B;
   }
- 
