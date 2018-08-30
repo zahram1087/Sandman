@@ -23,7 +23,7 @@ nav div{
     text-decoration: none;
 }
 nav ul {
-    float: left;
+    /* float: left; */
     margin-bottom: 10px;
     text-decoration: none;
     padding-top: 24px;
@@ -32,11 +32,13 @@ nav ul {
 nav li {
     display: inline-block;
     text-decoration: none;
+    margin-right: 90px;
+    
 }
 nav ul li a{
     text-decoration: none;
     color: sandybrown;
-    font-size: 12px;
+    font-size: 20px;
     padding: 5px;
 }
 header section{
@@ -84,10 +86,6 @@ main .wrapper{
     z-index:0;
 }
 #sandman{
-    /* width: 100%;
-    height: 500px; */
-    /* display: inline-block;
-    border: 1px dashed black; */
     position: absolute;
     left: 0px;
     top: 0px;
@@ -139,9 +137,6 @@ tr.user :nth-child(3){
     text-align: left;
 }
 
-
-
-
 /* Game interaction section */
 main .interaction{
     width: 67%;
@@ -167,18 +162,18 @@ main .wordDisplay{
     height: 80%;
 }
 .row {
-    background-color: lightskyblue;
+    /* background-color: lightskyblue; */
     height: 800px;
 }
-.card{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
+/* .card{
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+
 .card img{
     width: 100%;
     height: 240px;
 }
 .container{
-    padding:20px 16px;
+    /* padding:20px 16px; */
     background-color: white;
     height: 400px;
 }
@@ -259,6 +254,9 @@ nav ul li {
     margin: 10px;
 
 }
+#thing{
+    font-size: 20px;
+}
 
  #thing-text{
     position: absolute;
@@ -310,10 +308,10 @@ body.has-overlay::after {
 /* 
 THIS STYLING IS FOR THE WELCOME/TITLE PAGE-ZAHRA */
 
-/* html{
-    background-color: gray;
+html{
+    background-color: black;
  
-} */
+}
    div h1 {
     line-height: .95;
     color: sandybrown;
@@ -394,3 +392,5 @@ THIS STYLING IS FOR THE WELCOME/TITLE PAGE-ZAHRA */
     color: #10151B;
   }
  
+
+  
