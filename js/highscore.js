@@ -31,7 +31,7 @@ function arrangeScore(name, points) {
 function scoreTally(wordGuess) {
   for (var i = 0; i < score.length; i++) {
     if (score[i].letters.indexOf(wordGuess) > -1) {
-      scoreArray.push(score[i].points * (1 + (maxTries / 10))); //scoring formula
+      scoreArray.push(hintFactor * score[i].points * (1 + (maxTries / 10))); //scoring formula
     }
   }
   console.log(scoreArray);
