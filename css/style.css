@@ -79,8 +79,6 @@ main .wrapper{
     height:500px;
     width: 67%;
     z-index:0;
-    border-style: solid;
-    border-width: 1px;
 }
 #sandman{
     /* width: 100%;

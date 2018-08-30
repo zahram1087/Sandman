@@ -90,8 +90,8 @@ function Covergrain() {
 }
 
 function layerGrain(maxTries) {
-  var randomGrain = arrayGenerator();
-  for (var j = 0; j < 12; j++) {
+  for (var j = 0; j < 12; j++) { //12 is the number of rows of each each render section (5 pixels)
+    var randomGrain = arrayGenerator();
     for (var i = 0; i < width / grainSize; i++) {
       var sandman = new Covergrain();
       sandman.x = randomGrain[i] * 5;
@@ -104,6 +104,11 @@ function layerGrain(maxTries) {
 console.log(grain);
 
 function makeLayer(maxTries) {
+  if (maxTries < 7) { // This is for after missing the first guess so the sand can render instantly
+    for (var i = 0 + 1608 * (6 - maxTries); i < 1608 + 1608 * (6 - maxTries); i++) { //1608 = width * # of rows of each total render section
+      grain[i].draw(ctz);
+    }
+  }
   layerGrain(maxTries);
   var s = 0 + 1608 * (7 - maxTries);
   var a = setInterval(function() {
