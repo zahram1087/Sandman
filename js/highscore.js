@@ -38,7 +38,7 @@ function scoreTally(wordGuess) {
 }
 
 function computeScore() {
-  var sumScore = 0
+  var sumScore = 0;
   for (var i = 0; i < scoreArray.length; i++) {
     sumScore = sumScore + scoreArray[i];
   }

@@ -8,7 +8,7 @@
 //Attempting to display the sand  on top of stickman on click
 
 // draw the stickman
-function sandAnimation() {
+function sandAnimation(sand) {
   var hangman = function() {
     var myStickmanEl = document.getElementById('sandman');
     var ctx = myStickmanEl.getContext('2d'); //get context object
@@ -55,8 +55,8 @@ function sandAnimation() {
   // function sandAnimation() {
   var sandlayerEl = document.getElementById('sandlayer');
   var ctx = sandlayerEl.getContext('2d');
-  var width = ctx.canvas.width = window.innerWidth;
-  var height = ctx.canvas.height = window.innerHeight;
+  var width = ctx.canvas.width = 670;
+  var height = ctx.canvas.height = 500;
   // var width = ctx.canvas.width = 350;
   // var height = ctx.canvas.height = 350;
   var rightButtonClicked = false;
@@ -70,14 +70,13 @@ function sandAnimation() {
   // else { height = width;}
 
   var sandArea = {
-    x: 72,
-    y: 70
+    x: 108,
+    y: 140
   };
 
   var block = {
     x: Math.floor(width / sandArea.x),
     y: Math.floor(height / sandArea.y)
-
   };
 
   var sand = [];
@@ -92,7 +91,7 @@ function sandAnimation() {
     sand[from2D(x,y)] = null;
   }
 
-  function from2D( x,y){
+  function from2D(x,y) {
     if (x<0 || x> sandArea.x || y<0 || y> sandArea.y)
       return true;
     return y * sandArea.x + x;
@@ -121,7 +120,7 @@ function sandAnimation() {
     }
   }, false);
 
-  sandlayerEl.addEventListener('mouseup', function(event) {
+  sandlayerEl.addEventListener('mouseclick', function(event) {
     if (event.button === 0)
       leftButtonClicked = false;
     else if (event.button === 1)
@@ -140,19 +139,21 @@ function sandAnimation() {
       computeSand();
     }
 
-    drawSand();
+    drawSand(sandLogic);
     requestAnimationFrame(loop);
     time +=1;
   }
-  function drawSand() {
+  function drawSand(sandLogic) {
     ctx.fillStyle = 'sandybrown';
-    ctx.clearRect(0, 0, width, height);
+    if (sandLogic === true) {
+      ctx.clearRect(0, 0, width, height);
+    }
     var y, x;
     for (y = 0; y < sandArea.y; y++) {
       for (x = 0; x < sandArea.x; x++) {
         var e = sand[from2D(x, y)];
         if (e) {
-          ctx.fillRect(x * block.x, y * block.y, block.x, block.y);
+          ctx.fillRect(x * block.x, (y) * block.y, block.x, 1.5*block.y);
         }
       }
     }
@@ -197,14 +198,14 @@ function sandAnimation() {
     var y, x;
     for (y = 0; y < sandArea.y; y++) {
       for (x = 0; x < sandArea.x; x++) {
-        sand[y * sandArea.y + x] = null;
+        sand[.2*y * sandArea.y + x] = null;
         if (Math.random() * 10 > 8)
-          sand[y * sandArea.y + x] = true;
+          sand[.2*y * sandArea.y + x] = true;
       }
     }
   }
-  drawSand();
-  computeSand();
-  initArray();
+  // drawSand(sandLogic);
+  // computeSand();
+  // initArray();
 }
-sandAnimation();
+sandAnimation(sandLogic);

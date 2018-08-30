@@ -3,16 +3,16 @@
 var alphabet = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D',
   'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'HINT'
 ];
-
 var options = ['PLAY AGAIN', 'ENTER SCORE'];
-
+var vocabulary = results[generateRandom()].word.toUpperCase().split('');
 var scoreArray = [];
 var wordGuessArray = [];
+
 var countTries = 0;
 var maxTries = 8;
 var playOrNot = true;
-//eslint-disable-next-line
-var vocabulary = results[generateRandom()].word.toUpperCase().split('');
+var sandLogic = true;
+var grain = [];
 
 console.log(vocabulary);
 
@@ -20,12 +20,6 @@ console.log(vocabulary);
 initializeWords();
 renderKeyBoard();
 renderHighScore();
-
-
-function generateRandom() {
-  var randomGenerator = Math.floor(Math.random() * 999);
-  return randomGenerator;
-}
 
 document.addEventListener('keypress', function(event) {
   if (playOrNot === true) {
@@ -55,6 +49,11 @@ document.addEventListener('click', function(event) {
   }
 });
 
+function generateRandom() {
+  var randomGenerator = Math.floor(Math.random() * 999);
+  return randomGenerator;
+}
+
 function hallOfFame() {
   var inputName = prompt('Please Enter Your Name');
   var checkValue = arrangeScore(inputName, storePersonalScore(computeScore()));
@@ -77,8 +76,6 @@ function checkScore(checkValue, reference) {
   return false;
 }
 
-
-
 function compareGuess(event, wordGuess) {
   var loseTurn = 0;
   changeKeyColor(wordGuess);
@@ -100,6 +97,8 @@ function compareGuess(event, wordGuess) {
 
   if (loseTurn === 0) {
     maxTries--;
+    sandLogic = false;
+    makeLayer(maxTries);
     drawprogressBar(maxTries);
     console.log(`Turns Left: ${maxTries}`);
   }
@@ -156,7 +155,6 @@ function renderKeyBoard() {
       }
     }
   }
-
 }
 
 function changeKeyColor(wordGuess) {
