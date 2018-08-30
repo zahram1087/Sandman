@@ -4,7 +4,8 @@ var alphabet = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D',
   'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'HINT'
 ];
 var options = ['PLAY AGAIN', 'ENTER SCORE'];
-var vocabulary = results[generateRandom()].word.toUpperCase().split('');
+var selectWord = results[generateRandom()];
+var vocabulary = selectWord.word.toUpperCase().split('');
 var scoreArray = [];
 var wordGuessArray = [];
 
@@ -13,6 +14,8 @@ var maxTries = 8;
 var playOrNot = true;
 var sandLogic = true;
 var grain = [];
+var hintFactor = 1;
+var hintLogic = true;
 
 console.log(vocabulary);
 
@@ -46,6 +49,10 @@ document.addEventListener('click', function(event) {
     location.reload();
   } else if (event.target.textContent === 'ENTER SCORE') {
     hallOfFame();
+  } else if (event.target.textContent === 'Click for Hint' && hintLogic === true) {
+    hintFactor = .5;
+    createHint();
+    hintLogic = false;
   }
 });
 
@@ -109,6 +116,7 @@ function compareGuess(event, wordGuess) {
   } else if (maxTries <= 0) {
     scoreArray = [];
     gameOver(maxTries);
+    deadMan();
     for (var j = 0; j < vocabulary.length; j++) {
       revealLetter(j);
     }
@@ -155,6 +163,22 @@ function renderKeyBoard() {
       }
     }
   }
+  var hintRow = document.createElement('UL');
+  var hintKey = document.createElement('LI');
+  hintKey.textContent = 'Click for Hint';
+  hintRow.appendChild(hintKey);
+  keyboardRows.appendChild(hintRow);
+}
+
+function createHint() {
+  var hintItem = document.getElementById('hint');
+  var hintTag = document.createElement('P');
+  var breakTag = document.createElement('br');
+  hintTag.textContent = `HINT!!! Definition is ${selectWord.definition}`;
+  hintTag.style.color = 'red';
+  hintItem.appendChild(breakTag);
+  hintItem.appendChild(hintTag);
+
 }
 
 function changeKeyColor(wordGuess) {
@@ -176,13 +200,27 @@ function gameOver(maxTries) {
   var keyBlocks = document.getElementById('keyboard');
   keyBlocks.innerHTML = '';
   var congratMessage = document.createElement('P');
+  var pointMessage = document.createElement('P');
   if (maxTries > 0) {
     congratMessage.textContent = 'CONGRATULATIONS, YOU WON!';
+    if (localStorage.userScore !== undefined) {
+      pointMessage.textContent = `Your Total Score is ${parseInt(localStorage.userScore) + computeScore()} points.`;
+    } else {
+      pointMessage.textContent = `Your Total Score is ${computeScore()}`;
+    }
+
   } else if (maxTries === 0) {
     congratMessage.textContent = 'OH NO, YOU LOST!';
+    if (localStorage.userScore !== undefined) {
+      pointMessage.textContent = `Your Total Score is ${localStorage.userScore} points.`;
+    } else {
+      pointMessage.textContent = 'Your scored no points :(';
+    }
   }
   congratMessage.style.fontSize = '30px';
+  pointMessage.style.fontSize = '30px';
   keyBlocks.appendChild(congratMessage);
+  keyBlocks.appendChild(pointMessage);
   var makeRow = document.createElement('UL');
   for (var i = 0; i < 2; i++) {
     var makeListItem = document.createElement('LI');

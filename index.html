@@ -19,10 +19,18 @@
                 <li><a href="title.html">Home</a></li>
                 <li id = "thing">Rules</li>
                 <ol id = "thing-text">
+<<<<<<< HEAD
                     <li class = "list" >Start guessing letters by clicking the key board provided below or your own key board</li>
                     <li class = "list" >You have a total of eight guess</li>
                     <li class = "list" >For every letter guessed correctly a point is associated with the guess depending on the point system</li>
                     <li class = "list" >For every letter guessed incorrectly the sand increases in height until turns run out or word is guessed correctly </li>
+=======
+                    <li class = "list" >Guess each letter of the word using the onscreen or your physical keyboard.</li>
+                    <li class = "list" >You have a total of eight guess</li>
+                    <li class = "list" >For each word guessed correctly, points will be awarded base on the difficulty of the score.</li>
+                    <li class = "list" >You can continue to play to accumulate for a high score. Losing will break the scoring streak</li>
+                    <li class = "list" >If you get stuck, you can click for a hint. However, the points earned for that scored will be halved.</li>
+>>>>>>> 09293cf6a1c6b0507841e75a4f1dc2f64fb1620d
                   </ol>
 
                 <li><a href="about.html">About Us</a></li>
@@ -32,7 +40,7 @@
 
         <section class="banner">
             <h1 id="title">Sandman</h1>
-            <h2>Guess the word before the poor stick <br> figure gets drowned in Sand!</h2>
+            <h2 id="hint">Guess the word before the poor stick <br> figure gets drowned in Sand!<br></h2>
         </section>
     <!-- </div>   -->
     </header>
@@ -52,7 +60,7 @@
     </div>
     <div class = "interaction">
       <section id="blank-words"></section>
-      <canvas id="progressBar" width="800" height="20"></canvas>
+      <canvas id="progressBar" width="670" height="20"></canvas>
       <section id="keyboard"></section>
     </div>
 
@@ -67,8 +75,6 @@
     <script src="js/highScore.js"></script>
     <script src="js/app.js"></script>
     <script src= "js/progressBar.js"></script>
-    <script src="js/canvas.js"></script>
-  </div>
     <script src="js/test.js"></script>
 </body>
 </html>
