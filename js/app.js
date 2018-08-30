@@ -12,6 +12,7 @@ var countTries = 0;
 var maxTries = 8;
 var playOrNot = true;
 var sandLogic = true;
+var grain = [];
 
 console.log(vocabulary);
 
@@ -97,7 +98,7 @@ function compareGuess(event, wordGuess) {
   if (loseTurn === 0) {
     maxTries--;
     sandLogic = false;
-    sandAnimation(sandLogic);
+    makeLayer(maxTries);
     drawprogressBar(maxTries);
     console.log(`Turns Left: ${maxTries}`);
   }

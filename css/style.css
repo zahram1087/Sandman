@@ -79,7 +79,6 @@ main .wrapper{
     height:500px;
     width: 67%;
     z-index:0;
-    padding: 1px;
     border-style: solid;
     border-width: 1px;
 }
@@ -98,6 +97,12 @@ main .wrapper{
     left: 0px;
     top: 0px;
     z-index: 2;
+}
+#sandstorm{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 3;
 }
 /* #sandlayer {
     z-index: 0;
