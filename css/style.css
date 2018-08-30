@@ -1,8 +1,4 @@
 
-* {
-
-}
-
 body{
     width: 1024px;
     margin: 0 auto;
@@ -141,10 +137,6 @@ main .wrapper{
     height: 500px;
 
 }
-/* #sandlayer {
-    z-index: 0;
-   } */
-
 
 main .scoreColumn{
     float: right;
@@ -187,11 +179,6 @@ tr.user :nth-child(2){
 tr.user :nth-child(3){
     text-align: left;
 }
-
-
-
-
-
 
 
 
@@ -252,6 +239,7 @@ main .wordDisplay{
 .container p{
     font-size: 12px;
     padding-bottom: 2px;
+    text-align: left;
 }
 
 .container :nth-child(3){
@@ -329,20 +317,27 @@ nav ul li {
     font-size: 12px;
 }
 
+
+.list{
+    color: black;
+    margin: 10px;
+
+}
+
  #thing-text{
     position: absolute;
     left: 0;
     transition: opacity 1s;
     display: none;
-    width: 125px;
-    background-color: red;
+    width: 50%;
+    background-color: sandybrown;
     text-align: center;
     border-radius: 7px;
-    padding: 6px 0;
-    top: 0;
+    padding: 20px 0;
+    
 
     border-style: solid;
-    border-color: blue transparent transparent transparent;
+    border-color:white transparent transparent transparent;
     margin-left: -5px;
     border-width: 5px;
 }
@@ -352,6 +347,8 @@ nav ul li {
     display: block;
 
 }
+
+/*  black background/colums on the index page -zahra */
 
 body.has-overlay::after {
     content: "";
@@ -371,41 +368,39 @@ body.has-overlay::after {
     text-align: center;
 }
 
-
-
-/* 
-THIS STYLING IS FOR THE WELCOME PAGE-ZAHRA */
-
-html{
-    background-color: #10151B;
- 
+#trying{
+    position: relative;
+    z-index: 2;
+    text-align: center;
 }
 
-  
+/* 
+THIS STYLING IS FOR THE WELCOME/TITLE PAGE-ZAHRA */
+
+/* html{
+    background-color: gray;
+ 
+} */
    div h1 {
     line-height: .95;
     color: sandybrown;
     font-weight: 900;
     font-size: 150px;
     text-transform: uppercase;
-    /* -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; */
     pointer-events: none;
-    /* margin: 0 auto; */
+    
   }
   
   .center {
     position: absolute;
-    /* margin: auto; */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    /* width: 581px;
-    height: 50%; */
     margin-top: 20%;
+    z-index: 2;
+    text-align: center;
+    background-color: gray;
   }
   
   .play {
@@ -465,3 +460,4 @@ html{
     background: #66fcf1;
     color: #10151B;
   }
+ 
