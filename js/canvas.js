@@ -199,8 +199,8 @@ function sandAnimation() {
   var time = 0;
   var sand = [];
   var sandArea = {
-    x: 72,
-    y: 80
+    x: 60, //grain size
+    y: 60 //drop
   };
   var block = {
     x: Math.floor(width / sandArea.x),
@@ -215,9 +215,9 @@ function sandAnimation() {
     sand[from2D(x,y)]= true;
   }
 
-  function removePixel(x,y){
-    sand[from2D(x,y)] = null;
-  }
+  // function removePixel(x,y){
+  //   sand[from2D(x,y)] = null;
+  // }
 
   function from2D( x,y){
     if (x<0 || x> sandArea.x || y<0 || y> sandArea.y)
@@ -225,19 +225,17 @@ function sandAnimation() {
     return y * sandArea.x + x;
   }
 
+  /***************************************************************/
+  //       mouse interaction
+  /***************************************************************/
+
   sandlayerEl.addEventListener('mousedown', function(event){
-    event.preventDefault();
     mouseX = Math.floor(event.pageX / block.x);
     mouseY = Math.floor(event.pageY / block.y);
-    // mouseX = event.pageX;
-    // mouseY = event.pageY;
+    console.log(mouseX, mouseY);
     if (event.button === 0){
       addPixel(mouseX, mouseY);
       leftButtonClicked = true;
-    }
-    else if (event.button === 1){
-      removePixel(mouseX, mouseY);
-      rightButtonClicked = true;
     }
   }, false);
 
@@ -255,22 +253,24 @@ function sandAnimation() {
       rightButtonClicked = false;
   }, false);
 
+
+
+  
   function loop(){
     if(leftButtonClicked){
       addPixel(mouseX,mouseY);
-    }
-    else if (rightButtonClicked){
-      removePixel(mouseX,mouseY);
     }
     if (time >= 1){
       time = 0;
       computeSand();
     }
-
     drawSand();
     requestAnimationFrame(loop);
     time +=1;
   }
+
+
+
   function drawSand() {
     ctx.fillStyle = 'sandybrown';
     ctx.clearRect(0, 0, width, height);
@@ -304,7 +304,6 @@ function sandAnimation() {
                 sand[leftI] = true;
               else
                 sand[rightI] = true;
-
               sand[i] = null;
             } else if (!sand[leftI]) {
               sand[leftI] = true;
@@ -320,7 +319,12 @@ function sandAnimation() {
   }
 
   //initializing initial sand drops
+  /***************************************************************/
+  //       Returns value withing sand[] goes to addPixel, removePixel
+  /***************************************************************/
+
   function initArray() {
+
     var y, x;
     for (y = 0; y < sandArea.y; y++) {
       for (x = 0; x < sandArea.x; x++) {
@@ -333,5 +337,11 @@ function sandAnimation() {
   drawSand();
   computeSand();
   initArray();
+  sandlayerEl.addEventListener('click', function(event){
+    drawSand();
+    computeSand();
+    initArray();
+    event.preventDefault();
+  }, false);
 }
 sandAnimation();
