@@ -100,8 +100,8 @@ function sandAnimation() {
     var width = ctx.canvas.width = 670;
     var height = ctx.canvas.height = 500;
     var startingX = 335;
-    var headY = 100;
-    var headSize = 45;
+    var headY = 280;
+    var headSize = 30;
     var timeStamp = Date.now();
     var jump = false;
 
@@ -111,7 +111,7 @@ function sandAnimation() {
       if(Date.now() < (timeStamp + 900)) return requestAnimationFrame(jumpAnimation);
 
       if(jump){
-        headY = 100;
+        headY = 280;
         jump = false;
       }
       else{
@@ -254,7 +254,7 @@ function sandAnimation() {
 
 
 
-  
+
   function loop(){
     if(leftButtonClicked){
       addPixel(mouseX,mouseY);
@@ -346,3 +346,60 @@ function sandAnimation() {
   }, false);
 }
 sandAnimation(sandLogic);
+
+
+/**************************************************************************************************************/
+/**************************************************************************************************************/
+//                                            sand layer
+/**************************************************************************************************************/
+/**************************************************************************************************************/
+var hourglassLayer = function(){
+  var hourglassEl = document.getElementById('hourglass');
+  var ctx = hourglassEl.getContext('2d');
+  var width = ctx.canvas.width = 670;
+  var height = ctx.canvas.height = 500;
+  var hourglassX = 0;
+  var hourglassY = 0;
+  var hourglassWidth = 100;
+  var hourglassHeight = 500;
+
+
+  ctx.clearRect(0, 0, width, height);
+  ctx.beginPath();
+  ctx.strokeStyle = 'black';
+  ctx.lineWidth = 6;
+  ctx.moveTo(0, 0);
+  ctx.lineTo(100, 0);
+
+  ctx.arc(335,-350,400,1*Math.PI, 0*Math.PI, 1);
+  ctx.lineTo(670, 0);
+  ctx.lineTo(670, 0);
+  ctx.lineTo(670, 500);
+  ctx.lineTo(570, 500);
+  ctx.lineTo(570, 400);
+  ctx.arc(370,250, 200, 0*Math.PI, 1.5*Math.PI, 1);
+  ctx.lineTo(235, 50);
+  ctx.arc(300, 250, 200, 1.5*Math.PI, 1*Math.PI, 1);
+  ctx.lineTo(100, 500);
+  ctx.lineTo(0, 500);
+  ctx.closePath();
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.strokeStyle = "brown";
+  ctx.lineWidth = 30; 
+  // ctx.moveTo(0, 0);
+  // ctx.lineTo(0, 500);
+  // ctx.lineTo(670, 500);
+  // ctx.lineTo(670, 0);
+  ctx.moveTo(0, 500);
+  ctx.lineTo(670, 500);
+
+  ctx.stroke();
+  
+};
+hourglassLayer();
+
+
+
+

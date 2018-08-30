@@ -103,6 +103,12 @@ main .wrapper{
     top: 0px;
     z-index: 3;
 }
+#hourglass{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 4;
+}
 main .scoreColumn{
     float: right;
     padding: 5px;
