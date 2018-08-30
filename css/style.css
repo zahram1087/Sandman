@@ -32,6 +32,7 @@ nav ul {
 nav li {
     display: inline-block;
     text-decoration: none;
+    
 }
 nav ul li a{
     text-decoration: none;
@@ -104,6 +105,12 @@ main .wrapper{
     left: 0px;
     top: 0px;
     z-index: 3;
+}
+#hourglass{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 4;
 }
 main .scoreColumn{
     float: right;
