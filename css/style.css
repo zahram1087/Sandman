@@ -1,9 +1,12 @@
 
-
 body{
     width: 1024px;
     margin: 0 auto;
     font-family: 'Press Start 2P', cursive;
+    /* zahra add */
+    position: relative; 
+
+
 }
 header {
     width: 1024px;
@@ -102,9 +105,6 @@ main .wrapper{
     top: 0px;
     z-index: 3;
 }
-/* #sandlayer {
-    z-index: 0;
-   } */
 main .scoreColumn{
     float: right;
     padding: 5px;
@@ -138,6 +138,9 @@ tr.user :nth-child(2){
 tr.user :nth-child(3){
     text-align: left;
 }
+
+
+
 
 /* Game interaction section */
 main .interaction{
@@ -186,6 +189,7 @@ main .wordDisplay{
 .container p{
     font-size: 12px;
     padding-bottom: 2px;
+    text-align: left;
 }
 .container :nth-child(3){
     padding-top: 6px;
@@ -248,23 +252,145 @@ nav ul li {
     cursor: pointer;
     font-size: 12px;
 }
-#thing-text{
+
+
+.list{
+    color: black;
+    margin: 10px;
+
+}
+
+ #thing-text{
     position: absolute;
     left: 0;
     transition: opacity 1s;
     display: none;
-    width: 125px;
-    background-color: red;
+    width: 50%;
+    background-color: sandybrown;
     text-align: center;
     border-radius: 7px;
-    padding: 6px 0;
-    top: 0;
+    padding: 20px 0;
+    
 
     border-style: solid;
-    border-color: blue transparent transparent transparent;
+    border-color:white transparent transparent transparent;
     margin-left: -5px;
     border-width: 5px;
 }
 #thing:hover ~ #thing-text{
     display: block;
 }
+
+/*  black background/colums on the index page -zahra */
+
+body.has-overlay::after {
+    content: "";
+    display: block;
+    position: fixed;
+    padding: 100px 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color:black;
+}
+
+#background{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+#trying{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+/* 
+THIS STYLING IS FOR THE WELCOME/TITLE PAGE-ZAHRA */
+
+/* html{
+    background-color: gray;
+ 
+} */
+   div h1 {
+    line-height: .95;
+    color: sandybrown;
+    font-weight: 900;
+    font-size: 150px;
+    text-transform: uppercase;
+    pointer-events: none;
+    
+  }
+  
+  .center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 20%;
+    z-index: 2;
+    text-align: center;
+    background-color: gray;
+  }
+  
+  .play {
+    margin: 0 auto;
+    margin-top: 10%;
+    width: 170px;
+    height: 60px;
+    padding: 6px 0 0 3px;
+    border: 2px solid sandybrown;
+    border-radius: 2px;
+    background: none;
+    font-size: 16px;
+    line-height: 54px;
+    color: #fff;
+    letter-spacing: .25em;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  .play:hover {
+    background: #66fcf1;
+    color: #10151B;
+  }
+
+  .about {
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 170px;
+    height: 60px;
+    padding: 6px 0 0 3px;
+    border: 2px solid sandybrown;
+    border-radius: 2px;
+    background: none;
+    font-size: 16px;
+    line-height: 54px;
+    color: #fff;
+    letter-spacing: .25em;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  .about:hover {
+    background: #66fcf1;
+    color: #10151B;
+  }
+ 
