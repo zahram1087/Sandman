@@ -151,16 +151,15 @@ var hourglassLayer = function(){
   ctx.lineWidth = 6;
   ctx.moveTo(0, 0);
   ctx.lineTo(100, 0);
-
-  ctx.arc(335,-350,400,1*Math.PI, 0*Math.PI, 1);
-  ctx.lineTo(670, 0);
-  ctx.lineTo(670, 0);
+  // ctx.arc(335,-350,400,1*Math.PI, 0*Math.PI, 1);
+  ctx.lineTo(670, 2);
+  ctx.lineTo(670, 2);
   ctx.lineTo(670, 500);
   ctx.lineTo(570, 500);
   ctx.lineTo(570, 400);
-  ctx.arc(370,250, 200, 0*Math.PI, 1.5*Math.PI, 1);
-  ctx.lineTo(235, 50);
-  ctx.arc(300, 250, 200, 1.5*Math.PI, 1*Math.PI, 1);
+  ctx.arc(370,200, 200, 0*Math.PI, 1.5*Math.PI, 1);
+  ctx.lineTo(235, 2);
+  ctx.arc(300, 200, 200, 1.5*Math.PI, 1*Math.PI, 1);
   ctx.lineTo(100, 500);
   ctx.lineTo(0, 500);
   ctx.closePath();
@@ -173,10 +172,21 @@ var hourglassLayer = function(){
   // ctx.lineTo(0, 500);
   // ctx.lineTo(670, 500);
   // ctx.lineTo(670, 0);
-  ctx.moveTo(0, 500);
-  ctx.lineTo(670, 500);
+  ctx.moveTo(100, 500);
+  ctx.lineTo(570, 500);
 
   ctx.stroke();
+
+  ctx.translate(0, 100);
+            // add gradient
+            var grad = ctx.createLinearGradient(100, 0, 470, 0);
+            grad.addColorStop(0.3, 'rgb(255,255,255)');
+            grad.addColorStop(0.7, 'rgba(255,255,255,0)');
+
+            ctx.fillStyle = grad;
+            ctx.translate(0,0);
+            ctx.rect(370, 0, 115, 125);
+            ctx.fill();
 
 };
 hourglassLayer();

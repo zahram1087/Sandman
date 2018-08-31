@@ -124,6 +124,10 @@ main .wrapper{
 }
 
 /******* High Score Column ******/
+#score{
+    box-shadow: 1px 2px 1px grey;
+}
+
 main .scoreColumn{
     float: right;
     padding: 5px;
@@ -136,11 +140,15 @@ main .scoreColumn{
     margin-bottom: 100px;
 }
 #highScore{
+    clear: both;
     text-align: center;
     font-size: 20px;
     color: sandybrown;
     height: 50px;
-    padding-top: 10px;
+    margin-top: -5px;
+    padding-top: -40px;
+    box-shadow: 1px 2px 1px grey;
+
 }
 main .table{
     width: 100%;
@@ -170,6 +178,7 @@ tr.user :nth-child(3){
     color: sandybrown;
     letter-spacing: 1px;
     margin-bottom: 70px;
+    text-align: left;
 }
 
 #rules ul{
@@ -178,10 +187,9 @@ tr.user :nth-child(3){
 
 #rules ul :first-child{
     font-size: 30px;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
 
 }
-
 #rules ul li{
     padding: 8px;
     box-shadow: 1px 2px 1px grey;
@@ -281,7 +289,7 @@ main .wordDisplay{
 .container p{
     font-size: 12px;
     padding-bottom: 2px;
-    text-align: left;
+    text-align: center;
 }
 .container :nth-child(3){
     padding-top: 6px;
@@ -312,7 +320,7 @@ body.has-overlay::after { /*  black background/colums on the index page -zahra *
 
 /**************************************************************************************************************/
 /**************************************************************************************************************/
-/*                                         About Us
+/*                                         Home
 /**************************************************************************************************************/
 /**************************************************************************************************************/
 
@@ -344,11 +352,11 @@ div h1 {
     margin-top: 10%;
     width: 170px;
     height: 60px;
-    padding: 6px 0 0 3px;
+    padding: 1px 0 0 1px;
     border: 2px solid sandybrown;
-    border-radius: 2px;
+    border-radius: 1px;
     background: none;
-    font-size: 16px;
+    font-size: 25px;
     line-height: 54px;
     letter-spacing: .25em;
     text-decoration: none;
@@ -361,6 +369,7 @@ div h1 {
     appearance: none;
     cursor: pointer;
 }
+
 .play a{
 text-decoration: none;
 color: #fff;
@@ -378,7 +387,7 @@ color: #10151B;
     margin-top: 5%;
     width: 170px;
     height: 60px;
-    padding: 6px 0 0 3px;
+    padding: 0px 0 0 0px;
     border: 2px solid sandybrown;
     border-radius: 2px;
     background: none;
@@ -400,6 +409,15 @@ color: #10151B;
     background: #66fcf1;
     color: #10151B;
 }
- 
-
-  
+.container{
+    padding: 2px;
+    
+}
+.container p{
+    font-size: 10px;
+}
+/* .aboutnav ul{
+    padding-top: 40px;
+    font-size: 40px;
+    margin: 0 auto;
+} */
