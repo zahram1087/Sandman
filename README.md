@@ -1,6 +1,11 @@
-# Project Title
+# Sandman
 
-One Paragraph of project description goes here
+
+Standard hangman games are fun and entertaining, but the mechanisms used are very mundane and the characteristics of the game can become boring to users who have played in the past. Our game aims to change the  limitations on the kinds of interactions the generic hangman game has with its users and on the knowledge they can acquire from the game.
+
+ A new kind of hangman is being developed by this project called sandman. Instead of just removing limbs we bury the stick figure in sand, it copies the inner structures of the hangman game such as the methdology of the game but with different user interactions.
+
+We aimed to create an interactive game to provide users with an entertaining method to learns and expand their vocaulary by means of SAT words. 
 
 ## Getting Started
 
