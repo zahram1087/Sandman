@@ -1,74 +1,29 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sandman</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Press+Start+2P" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Press+Start+2P" rel="stylesheet">
 </head>
-<body class = "has-overlay">
-  <div id = "background">
-    <header id="main">
 
-        <nav>
-            <ul>
-                <li><a href="title.html">Home</a></li>
-                <li id = "thing">Rules</li>
-                <ol id = "thing-text">
-                    <li class = "list" >Guess each letter of the word using the onscreen or your physical keyboard.</li>
-                    <li class = "list" >You have a total of eight guesses.</li>
-                    <li class = "list" >For each word guessed correctly, points will be awarded base on the difficulty of the score.</li>
-                    <li class = "list" >You can continue to play to accumulate more points for a high score. Losing will break the scoring streak</li>
-                    <li class = "list" >If you get stuck, you can request for a hint. However, the points earned for that score will be halved.</li>
-                  </ol>
+<body>
 
-                <li><a href="about.html">About Us</a></li>
-            </ul>
-        </nav>
-
-
-        <section class="banner">
-            <h1 id="title">Sandman</h1>
-            <h2 id="hint">Guess the word before the poor stick <br> figure gets drowned in Sand!<br></h2>
-        </section>
-    <!-- </div>   -->
-    </header>
-
-<main>
-    <div class="wrapper">
-        <div id="canvasContainer">
-            <canvas id= "sandman"></canvas>
-            <canvas id= "sandlayer"></canvas>
-            <canvas id= "sandstorm"></canvas>
-            <canvas id= "hourglass"></canvas>
-        </div>
-        <section class = "scoreColumn">
-            <p id="highScore">High Scores!</p>
-            <table id ="scoreboard" class="table"></table>
-        </section>
-
+    <header>
+      <canvas id= "sandfall" width="1024" height="695" style="z-index:1; position:absolute"></canvas>  
+    
+    <div class = "center">
+      <h1> SANDMAN</h1>
+      <div class = "play"><a href="main.html">PLAY</a></div>
+      <div class = "about"><a href="about.html">ABOUT US</a></div>
     </div>
-    <div class = "interaction">
-      <section id="blank-words"></section>
-      <canvas id="progressBar" width="670" height="20"></canvas>
-      <section id="keyboard"></section>
-    </div>
+  </header>
 
-</main>
-<!-- <canvas id="sandlayer"></canvas>
-<canvas id= "sandman" ></canvas> -->
+<script src="js/title.js"></script>
 
-<script src="assets/scores.js" type="text/javascript"></script>
-<script src="assets/majortests_words.js" type="text/javascript"></script>
-
-<!-- <canvas id="sandman" width="400px" height="400px" style = "z-index:1; position: absolute; left: 0px; top: opx"></canvas> -->
-    <script src="js/highScore.js"></script>
-    <script src="js/app.js"></script>
-    <script src= "js/progressBar.js"></script>
-    <script src="js/test.js"></script>
 </body>
 </html>

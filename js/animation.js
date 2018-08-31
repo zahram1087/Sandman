@@ -1,5 +1,4 @@
 'use strict';
-//
 
 function sandBlizzard() {
   var sandstormEl = document.getElementById('sandstorm');
@@ -15,8 +14,8 @@ function sandBlizzard() {
   }
 
   function yVelocity() {
-    var vy = (Math.random() * 5) + 5;
-    return vy;
+    var yAxisChange = (Math.random() * 5) + 5;
+    return yAxisChange;
   }
 
   function randomPosition(sections) {
@@ -38,8 +37,6 @@ function sandBlizzard() {
     var sandman = new Sandgrain();
     grainStorm.push(sandman);
   }
-
-
 
   function renderFrame() {
     cty.clearRect(0, 0, width, height);
@@ -134,68 +131,71 @@ var hangman = function() {
   var startingX = width / 2;
   var headY = 100;
   var headSize = 45;
-  var vy = 0;
-  var plusMinus = 0;
+  var yAxisChange = 0;
+  var rangeOfChange = 0;
+
 
   var Man = function() {
     this.draw = function() {
-
       //Head
       ctx.beginPath();
       ctx.strokeStyle = 'black';
       ctx.lineWidth = 3;
-      ctx.arc(startingX, headY + vy, headSize, 0, Math.PI * 2, false); //draws circle for head
+      ctx.arc(startingX, headY + yAxisChange, headSize, 0, Math.PI * 2, false); //draws circle for head
       ctx.stroke();
-
       //body
       ctx.beginPath();
-      ctx.moveTo(startingX, headY + headSize + vy);
-      ctx.lineTo(startingX, headY + 180 + vy);
+      ctx.moveTo(startingX, headY + headSize + yAxisChange);
+      ctx.lineTo(startingX, headY + 180 + yAxisChange);
       ctx.strokeStyle = 'black';
       ctx.stroke();
-
       //arms
       ctx.beginPath();
       ctx.strokeStyle = 'black';
-      ctx.moveTo(startingX, headY + headSize + vy);
-      ctx.lineTo(startingX + 60, headY + 150 + vy);
-      ctx.moveTo(startingX + 60, headY + 150 + vy);
-      ctx.lineTo(startingX + 80, (headY + 145 + 55 * plusMinus + vy));
-      ctx.moveTo(startingX, headY + headSize + vy);
-      ctx.lineTo(startingX - 60, headY + 150 + vy);
-      ctx.moveTo(startingX - 60, headY + 150 + vy);
-      ctx.lineTo(startingX - 80, (headY + 145 + 55 * plusMinus + vy));
+      ctx.moveTo(startingX, headY + headSize + yAxisChange + 20);
+      ctx.lineTo(startingX + 60, headY + 100 + yAxisChange * rangeOfChange);
+      ctx.moveTo(startingX + 60, headY + 100 + yAxisChange * rangeOfChange);
+      ctx.lineTo(startingX + 80, (headY + 95 + 55 * rangeOfChange + yAxisChange));
+      ctx.moveTo(startingX, headY + headSize + yAxisChange + 20);
+      ctx.lineTo(startingX - 60, headY + 100 + yAxisChange * rangeOfChange);
+      ctx.moveTo(startingX - 60, headY + 100 + yAxisChange * rangeOfChange);
+      ctx.lineTo(startingX - 80, (headY + 95 + 55 * rangeOfChange + yAxisChange));
       ctx.stroke();
-
       //legs
       ctx.beginPath();
       ctx.strokeStyle = 'black';
-      ctx.moveTo(startingX, headY + 180 + vy);
-      ctx.lineTo(startingX + headSize, headY + 260 + vy);
-      ctx.moveTo(startingX, headY + 180 + vy);
-      ctx.lineTo(startingX - headSize, headY + 260 + vy);
-      ctx.moveTo(startingX + headSize, headY + 260 + vy);
-      ctx.lineTo(startingX + headSize, headY + 360 + vy);
-      ctx.moveTo(startingX - headSize, headY + 260 + vy);
-      ctx.lineTo(startingX - headSize, headY + 360 + vy);
+      ctx.moveTo(startingX, headY + 180 + yAxisChange);
+      ctx.lineTo(startingX + headSize, headY + 260 + yAxisChange);
+      ctx.moveTo(startingX, headY + 180 + yAxisChange);
+      ctx.lineTo(startingX - headSize, headY + 260 + yAxisChange);
+      ctx.moveTo(startingX + headSize, headY + 260 + yAxisChange);
+      ctx.lineTo(startingX + headSize, headY + 360 + yAxisChange);
+      ctx.moveTo(startingX - headSize, headY + 260 + yAxisChange);
+      ctx.lineTo(startingX - headSize, headY + 360 + yAxisChange);
       ctx.stroke();
     };
   };
 
   var firstMan = new Man();
   var i = 0;
+  var counter = 0;
   function renderFrame() {
     ctx.clearRect(0, 0, width, height);
     firstMan.draw();
+    if(++counter % 1.5){
+      requestAnimationFrame(renderFrame);
+      return false;
+    }
     if (i < 15) {
-      vy -= 3;
+      yAxisChange -= 3;
+
     } else if (i > 14 && i < 30) {
-      vy += 3;
+      yAxisChange += 3;
     } else {
-      i = -1
+      i = -1;
     }
     i++;
-    plusMinus = Math.round(Math.random()) * 2 - 1;
+    rangeOfChange = Math.round(Math.random()) * 2 - 1;
     requestAnimationFrame(renderFrame);
   }
   renderFrame();

@@ -1,16 +1,6 @@
-//
-//
 'use strict';
 var progressBar = document.getElementById('progressBar'),
   ctx = progressBar.getContext('2d');
-//
-//
-// var clickEl = document.getElementById('missClick');
-// clickEl.addEventListener('click', missCounter);
-// function missCounter(){
-//   valueChange = valueChange + 20;
-//   drawprogressBar();
-// }
 
 
 var widthBar = widthBar,

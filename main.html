@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sandman</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Press+Start+2P" rel="stylesheet">
+</head>
+
+<body class = "has-overlay">
+  <div id = "background">
+    
+    <header id="main">
+        <nav>
+            <ul>
+                <li class="titleMain"><a>Sandman</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="main.html">Play Game</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+        <section class="banner">
+            <h2 id="hint">Guess the word before the poor stick <br> figure gets drowned in sand!<br></h2>
+        </section>
+    </header>
+
+<main>
+    <div class="wrapper">
+        <div id="canvasContainer">
+            <canvas id= "sandman"></canvas>
+            <canvas id= "sandlayer"></canvas>
+            <canvas id= "sandstorm"></canvas>
+            <canvas id= "hourglass"></canvas>
+        </div>
+        <section class = "scoreColumn">
+            <div id = "rules">
+                    <ul>
+                        <li>Game Rules</li>
+                        <li>Guess each letter of the word correctly by mouse or keyboard clicks.</li>
+                        <li>You have a total of eight guesses per word</li>
+                        <li>For each correct guess, points will be awarded accordingly to our uniqness letter grade.</li>
+                        <li>You can continue to play to accumulate for a higher session score.<br>Losing will break the scoring streak</li>
+                        <li>If you get stuck, you can click for a hint. However, the points earned for that scored will be halved.</li>
+                    </ul>
+                </div>
+                <div id = "score">
+                    <div id="highScore"><p>High Scores!</p></div>
+                    <table id ="scoreboard" class="table"></table>
+                </div>
+        </section>
+    </div>
+    
+    <section class = "mainBottom">
+        <div class = "interaction">
+        <section id="blank-words"></section>
+        <canvas id="progressBar" width="670" height="20"></canvas>
+        <section id="keyboard"></section>
+        </div>
+    </section>
+</main>
+
+    <script src="assets/scores.js"></script>
+    <script src="assets/majortests_words.js"></script>
+    <script src="js/highScore.js"></script>
+    <script src="js/app.js"></script>
+    <script src= "js/progressBar.js"></script>
+    <script src="js/animation.js"></script>
+    <script src ="js/canvas.js"> </script>
+
+</body>
+</html>

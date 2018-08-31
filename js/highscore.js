@@ -71,21 +71,22 @@ function renderHighScore() {
   if (scoreList !== null) {
     highScoreTable.innerHTML = '';
     var rowHead = document.createElement('TR');
-    var nameHead = document.createElement('TH');
-    nameHead.textContent = 'Name';
     var scoreHead = document.createElement('TH');
     scoreHead.textContent = 'Score';
-    rowHead.appendChild(nameHead);
+    var nameHead = document.createElement('TH');
+    nameHead.textContent = 'Name';
     rowHead.appendChild(scoreHead);
+    rowHead.appendChild(nameHead);
+    
     highScoreTable.appendChild(rowHead);
     for (var i = 0; i < scoreList.length; i++) {
       var scoreRow = document.createElement('TR');
-      var scoreName = document.createElement('TD');
-      scoreName.textContent = scoreList[i].name;
       var scorePoints = document.createElement('TD');
       scorePoints.textContent = scoreList[i].points;
-      scoreRow.appendChild(scoreName);
+      var scoreName = document.createElement('TD');
+      scoreName.textContent = scoreList[i].name;
       scoreRow.appendChild(scorePoints);
+      scoreRow.appendChild(scoreName);
       highScoreTable.appendChild(scoreRow);
     }
   }
