@@ -1,5 +1,4 @@
 'use strict';
-//
 
 function sandBlizzard() {
   var sandstormEl = document.getElementById('sandstorm');
@@ -38,8 +37,6 @@ function sandBlizzard() {
     var sandman = new Sandgrain();
     grainStorm.push(sandman);
   }
-
-
 
   function renderFrame() {
     cty.clearRect(0, 0, width, height);
@@ -191,11 +188,11 @@ var hangman = function() {
     }
     if (i < 15) {
       yAxisChange -= 3;
-      
+
     } else if (i > 14 && i < 30) {
       yAxisChange += 3;
     } else {
-      i = -1
+      i = -1;
     }
     i++;
     rangeOfChange = Math.round(Math.random()) * 2 - 1;

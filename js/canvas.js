@@ -14,7 +14,7 @@ function sandAnimation() {
   var ctx = sandlayerEl.getContext('2d');
   var width = ctx.canvas.width = 670;
   var height = ctx.canvas.height = 500;
-  var rightButtonClicked = false;
+  var rightButtonClicked = false; //eslint-disable-line
   var leftButtonClicked = false;
   var mouseX, mouseY;
   var time = 0;
@@ -58,7 +58,7 @@ function sandAnimation() {
 
   function drawSand() {
     ctx.fillStyle = 'sandybrown';
-    if (sandLogic === true) {
+    if (sandLogic === true) { //eslint-disable-line
       ctx.clearRect(0, 0, width, height);
     }
     var y, x;
@@ -131,7 +131,7 @@ function sandAnimation() {
     event.preventDefault();
   }, false);
 }
-sandAnimation(sandLogic);
+sandAnimation(sandLogic); //eslint-disable-line
 
 
 /**************************************************************************************************************/
@@ -178,15 +178,15 @@ var hourglassLayer = function(){
   ctx.stroke();
 
   ctx.translate(0, 100);
-            // add gradient
-            var grad = ctx.createLinearGradient(100, 0, 470, 0);
-            grad.addColorStop(0.3, 'rgb(255,255,255)');
-            grad.addColorStop(0.7, 'rgba(255,255,255,0)');
+  // add gradient
+  var grad = ctx.createLinearGradient(100, 0, 470, 0);
+  grad.addColorStop(0.3, 'rgb(255,255,255)');
+  grad.addColorStop(0.7, 'rgba(255,255,255,0)');
 
-            ctx.fillStyle = grad;
-            ctx.translate(0,0);
-            ctx.rect(370, 0, 115, 125);
-            ctx.fill();
+  ctx.fillStyle = grad;
+  ctx.translate(0,0);
+  ctx.rect(370, 0, 115, 125);
+  ctx.fill();
 
 };
 hourglassLayer();

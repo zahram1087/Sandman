@@ -15,5 +15,5 @@ o  Control the number of guesses the user has to challenge the user
 o  Create a visual representation of when the user submits a wrong answer
 o  Display the correct answer at the end to add to the user library of vocabulary words
 o  Display the users high score
-o  STRETCH GOAL: Provide the user with hints
+o  STRETCH GOAL: Provide the user with hints (Done)
 o  STRETCH GOAL: Add a timer to control how long the user can play per session to challenge the user
