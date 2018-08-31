@@ -124,9 +124,6 @@ main .wrapper{
 }
 
 /******* High Score Column ******/
-#score{
-    box-shadow: 1px 2px 1px grey;
-}
 
 main .scoreColumn{
     float: right;
@@ -147,7 +144,7 @@ main .scoreColumn{
     height: 50px;
     margin-top: -5px;
     padding-top: -40px;
-    box-shadow: 1px 2px 1px grey;
+
 
 }
 main .table{
@@ -179,6 +176,9 @@ tr.user :nth-child(3){
     letter-spacing: 1px;
     margin-bottom: 70px;
     text-align: left;
+}
+#rules :first-child{
+    text-align: center;
 }
 
 #rules ul{
