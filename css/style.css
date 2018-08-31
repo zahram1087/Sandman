@@ -190,7 +190,7 @@ main .wordDisplay{
 .container p{
     font-size: 12px;
     padding-bottom: 2px;
-    text-align: left;
+    text-align: center;
 }
 .container :nth-child(3){
     padding-top: 6px;
