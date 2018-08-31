@@ -17,13 +17,13 @@
     <header id="main">
         <nav>
             <ul>
+                <li class="titleMain"><a>Sandman</a></li>
                 <li><a href="main.html">Play Now!</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="index.html">Restart</a></li>
             </ul>
         </nav>
         <section class="banner">
-            <h1 id="title">Sandman</h1>
             <h2 id="hint">Guess the word before the poor stick <br> figure gets drowned in sand!<br></h2>
         </section>
     </header>
@@ -37,25 +37,30 @@
             <canvas id= "hourglass"></canvas>
         </div>
         <section class = "scoreColumn">
-            <p id="highScore">High Scores!</p>
-            <table id ="scoreboard" class="table"></table>
+            <div id = "rules">
+                    <ul>
+                        <li>Game Rules</li>
+                        <li>Guess each letter of the word correctly by mouse or keyboard clicks.</li>
+                        <li>You have a total of eight guesses per word</li>
+                        <li>For each correct guess, points will be awarded accordingly to our uniqness letter grade.</li>
+                        <li>You can continue to play to accumulate for a higher session score.<br>Losing will break the scoring streak</li>
+                        <li>If you get stuck, you can click for a hint. However, the points earned for that scored will be halved.</li>
+                    </ul>
+                </div>
+                <div id = "score">
+                    <div id="highScore"><p>High Scores!</p></div>
+                    <table id ="scoreboard" class="table"></table>
+                </div>
         </section>
     </div>
-    <div class = "interaction">
-      <section id="blank-words"></section>
-      <canvas id="progressBar" width="670" height="20"></canvas>
-      <section id="keyboard"></section>
-    </div>
-        <ul>
-            <ol id = "thing-text">
-                <li class = "list" >Guess each letter of the word using the onscreen or your physical keyboard.</li>
-                <li class = "list" >You have a total of eight guess</li>
-                <li class = "list" >For each word guessed correctly, points will be awarded base on the difficulty of the score.</li>
-                <li class = "list" >You can continue to play to accumulate for a high score. Losing will break the scoring streak</li>
-                <li class = "list" >If you get stuck, you can click for a hint. However, the points earned for that scored will be halved.</li>
-          </ol>
-        </ul>
-
+    
+    <section class = "mainBottom">
+        <div class = "interaction">
+        <section id="blank-words"></section>
+        <canvas id="progressBar" width="670" height="20"></canvas>
+        <section id="keyboard"></section>
+        </div>
+    </section>
 </main>
 
     <script src="assets/scores.js"></script>
