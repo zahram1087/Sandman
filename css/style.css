@@ -33,7 +33,7 @@ nav li {
     display: inline-block;
     text-decoration: none;
     margin-right: 90px;
-    
+
 }
 nav ul li a{
     text-decoration: none;
@@ -277,6 +277,7 @@ nav ul li {
     border-color:white transparent transparent transparent;
     margin-left: -5px;
     border-width: 5px;
+    z-index: 5;
 }
 #thing:hover ~ #thing-text{
     display: block;
@@ -313,7 +314,7 @@ THIS STYLING IS FOR THE WELCOME/TITLE PAGE-ZAHRA */
 
 html{
     background-color: black;
- 
+
 }
    div h1 {
     line-height: .95;
@@ -394,6 +395,3 @@ html{
     background: #66fcf1;
     color: #10151B;
   }
- 
-
-  
