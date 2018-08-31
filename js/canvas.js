@@ -94,76 +94,76 @@ function sandAnimation() {
 //                                            Jumping Animation
 /**************************************************************************************************************/
 /**************************************************************************************************************/
-  var sandmanJump = function() {
-    var myStickmanEl = document.getElementById('sandman');
-    var ctx = myStickmanEl.getContext('2d'); //get context object
-    var width = ctx.canvas.width = 670;
-    var height = ctx.canvas.height = 500;
-    var startingX = 335;
-    var headY = 280;
-    var headSize = 30;
-    var timeStamp = Date.now();
-    var jump = false;
+  // var sandmanJump = function() {
+  //   var myStickmanEl = document.getElementById('sandman');
+  //   var ctx = myStickmanEl.getContext('2d'); //get context object
+  //   var width = ctx.canvas.width = 670;
+  //   var height = ctx.canvas.height = 500;
+  //   var startingX = 335;
+  //   var headY = 280;
+  //   var headSize = 30;
+  //   var timeStamp = Date.now();
+  //   var jump = false;
 
-    jumpAnimation();
+  //   jumpAnimation();
 
-    function jumpAnimation(){
-      if(Date.now() < (timeStamp + 900)) return requestAnimationFrame(jumpAnimation);
+  //   function jumpAnimation(){
+  //     if(Date.now() < (timeStamp + 900)) return requestAnimationFrame(jumpAnimation);
 
-      if(jump){
-        headY = 280;
-        jump = false;
-      }
-      else{
-        headY = headY - 50;
-        jump = true;
-      }
-      ctx.clearRect(0, 0, width, height);
-      ctx.beginPath();
-      ctx.strokeStyle = 'black';
-      ctx.lineWidth = 6;
-      ctx.arc(startingX, headY, headSize, 0, Math.PI * 2, false); //draws circle for head
-      ctx.stroke();
+  //     if(jump){
+  //       headY = 280;
+  //       jump = false;
+  //     }
+  //     else{
+  //       headY = headY - 50;
+  //       jump = true;
+  //     }
+  //     ctx.clearRect(0, 0, width, height);
+  //     ctx.beginPath();
+  //     ctx.strokeStyle = 'black';
+  //     ctx.lineWidth = 6;
+  //     ctx.arc(startingX, headY, headSize, 0, Math.PI * 2, false); //draws circle for head
+  //     ctx.stroke();
 
-      //body
-      ctx.beginPath();
-      ctx.moveTo(startingX, headY + headSize);
-      ctx.lineTo(startingX, headY + 4*headSize);
-      ctx.strokeStyle = 'black';
-      ctx.stroke();
+  //     //body
+  //     ctx.beginPath();
+  //     ctx.moveTo(startingX, headY + headSize);
+  //     ctx.lineTo(startingX, headY + 4*headSize);
+  //     ctx.strokeStyle = 'black';
+  //     ctx.stroke();
 
-      //arms
-      ctx.beginPath();
-      ctx.strokeStyle = 'black';
-      ctx.moveTo(startingX, headY + 1.5*headSize);
-      ctx.lineTo(startingX + 1.3*headSize, headY);
-      ctx.moveTo(startingX + 1.3*headSize, headY);
-      ctx.lineTo(startingX + 1.3*headSize, headY - 1.4*headSize);
-      ctx.stroke();
-      ctx.moveTo(startingX, headY + 1.5*headSize);
-      ctx.lineTo(startingX - 1.3*headSize, headY );
-      ctx.moveTo(startingX - 1.3*headSize, headY );
-      ctx.lineTo(startingX - 1.3*headSize, headY -1.4*headSize);
-      ctx.stroke();
+  //     //arms
+  //     ctx.beginPath();
+  //     ctx.strokeStyle = 'black';
+  //     ctx.moveTo(startingX, headY + 1.5*headSize);
+  //     ctx.lineTo(startingX + 1.3*headSize, headY);
+  //     ctx.moveTo(startingX + 1.3*headSize, headY);
+  //     ctx.lineTo(startingX + 1.3*headSize, headY - 1.4*headSize);
+  //     ctx.stroke();
+  //     ctx.moveTo(startingX, headY + 1.5*headSize);
+  //     ctx.lineTo(startingX - 1.3*headSize, headY );
+  //     ctx.moveTo(startingX - 1.3*headSize, headY );
+  //     ctx.lineTo(startingX - 1.3*headSize, headY -1.4*headSize);
+  //     ctx.stroke();
 
-      //legs
-      ctx.beginPath();
-      ctx.strokeStyle = 'black';
-      ctx.moveTo(startingX, headY + 4*headSize);
-      ctx.lineTo(startingX + headSize, headY + 5.5*headSize);
-      ctx.moveTo(startingX, headY + 4*headSize);
-      ctx.lineTo(startingX - headSize, headY + 5.5*headSize);
-      ctx.moveTo(startingX + headSize, headY + 5.5*headSize);
-      ctx.lineTo(startingX + headSize, headY + 8*headSize);
-      ctx.moveTo(startingX - headSize, headY + 5.5*headSize);
-      ctx.lineTo(startingX - headSize, headY + 8*headSize);
-      ctx.stroke();
-      timeStamp = Date.now();
-      requestAnimationFrame(jumpAnimation);
+  //     //legs
+  //     ctx.beginPath();
+  //     ctx.strokeStyle = 'black';
+  //     ctx.moveTo(startingX, headY + 4*headSize);
+  //     ctx.lineTo(startingX + headSize, headY + 5.5*headSize);
+  //     ctx.moveTo(startingX, headY + 4*headSize);
+  //     ctx.lineTo(startingX - headSize, headY + 5.5*headSize);
+  //     ctx.moveTo(startingX + headSize, headY + 5.5*headSize);
+  //     ctx.lineTo(startingX + headSize, headY + 8*headSize);
+  //     ctx.moveTo(startingX - headSize, headY + 5.5*headSize);
+  //     ctx.lineTo(startingX - headSize, headY + 8*headSize);
+  //     ctx.stroke();
+  //     timeStamp = Date.now();
+  //     requestAnimationFrame(jumpAnimation);
 
-    }
-  };
-  sandmanJump();
+  //   }
+  // };
+  // sandmanJump();
 
 
 

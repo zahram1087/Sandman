@@ -132,7 +132,7 @@ var hangman = function() {
   var width = ctx.canvas.width = 670;
   var height = ctx.canvas.height = 500;
   var startingX = width / 2;
-  var headY = 100;
+  var headY = 120;
   var headSize = 45;
   var vy = 0;
   var plusMinus = 0;

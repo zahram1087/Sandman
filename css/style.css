@@ -1,12 +1,14 @@
+/**************************************************************************************************************/
+/**************************************************************************************************************/
+/*                                         Main/Global
+/**************************************************************************************************************/
+/**************************************************************************************************************/
 
 body{
     width: 1024px;
     margin: 0 auto;
     font-family: 'Press Start 2P', cursive;
-    /* zahra add */
     position: relative;
-
-
 }
 header {
     width: 1024px;
@@ -23,7 +25,6 @@ nav div{
     text-decoration: none;
 }
 nav ul {
-    /* float: left; */
     margin-bottom: 10px;
     text-decoration: none;
     padding-top: 24px;
@@ -41,9 +42,6 @@ nav ul li a{
     font-size: 20px;
     padding: 5px;
 }
-header section{
-    padding: 10px 0 25px;
-}
 header .banner{
     font-size: 16px;
     width: 1024px;
@@ -54,21 +52,21 @@ header .banner{
 #title{
     padding: 24px;
     font-size: 32px;
-    margin: 0 auto;
 }
 header .banner p2{
     font-size: 16px;
 }
-/* Main section */
-#progressBar{
-    height: 20px;
-    width: 500px;
-    margin: 0 auto;
-    display: inline-block;
+
+/******* Body rendering graphics *******/
+main{
     background-color: lightskyblue
 }
-/* Body rendering graphics */
-main{
+#progressBar{
+    border-radius: 25px;
+    height: 30px;
+    width: 650px;
+    margin: 0 auto;
+    display: inline-block;
     background-color: lightskyblue
 }
 main .wrapper{
@@ -78,6 +76,8 @@ main .wrapper{
     background-color: lightskyblue;
     padding-left: 20px;
 }
+
+/****** Canvas Elements ****/
 #canvasContainer{
     position:relative;
     display: inline-block;
@@ -109,6 +109,8 @@ main .wrapper{
     top: 0px;
     z-index: 4;
 }
+
+/******* High Score Column ******/
 main .scoreColumn{
     float: right;
     padding: 5px;
@@ -143,7 +145,39 @@ tr.user :nth-child(3){
     text-align: left;
 }
 
-/* Game interaction section */
+/* List Element that contains the rules  */
+nav ul li {
+    color: sandybrown;
+    cursor: pointer;
+    font-size: 12px;
+}
+.list{
+    color: black;
+    margin: 10px;
+}
+#thing{
+    font-size: 20px;
+}
+ #thing-text{
+    position: absolute;
+    left: 0;
+    transition: opacity 1s;
+    display: none;
+    width: 50%;
+    background-color: sandybrown;
+    border-radius: 7px;
+    padding: 20px 0;
+    text-align: left;
+    border-style: solid;
+    border-color:white transparent transparent transparent;
+    margin-left: -5px;
+    border-width: 5px;
+}
+#thing:hover ~ #thing-text{
+    display: block;
+}
+
+/******** Game interaction section *********/
 main .interaction{
     width: 67%;
     display: block;
@@ -158,7 +192,57 @@ main .wordDisplay{
     height: 50%;
     display: block;
 }
-/* about us */
+
+/*Keyboard and word layout*/
+#blank-words {
+    align-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #blank-words p {
+    display: inline-block;
+    font-size: 32px;
+    padding-right: 10px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+  #blank-words ul li {
+    align-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #keyboard {
+    width: 686 px;
+    align-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 40px;
+  }
+  #keyboard p {
+    margin-bottom: 30px;
+  }
+  #keyboard ul li {
+    display: inline-block;
+    font-size: 25px;
+    padding: 12px;
+    border: 3px solid black;
+    border-radius: 5px;
+    background-color: white;
+    margin: 5px;
+  }
+  #keyboard ul li:hover {
+    background-color: yellow;
+  }
+
+/**************************************************************************************************************/
+/**************************************************************************************************************/
+/*                                         About Us
+/**************************************************************************************************************/
+/**************************************************************************************************************/
+
 .column {
     display: inline-block;
     width: 30%;
@@ -168,18 +252,13 @@ main .wordDisplay{
     height: 80%;
 }
 .row {
-    /* background-color: lightskyblue; */
     height: 800px;
 }
-/* .card{
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
-
 .card img{
     width: 100%;
     height: 240px;
 }
 .container{
-    /* padding:20px 16px; */
     background-color: white;
     height: 400px;
 }
@@ -201,90 +280,8 @@ main .wordDisplay{
 .title{
     color: grey;
 }
-/*This is for the KeyBoard and Word Layout*/
-#blank-words {
-  align-content: center;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-#blank-words p {
-  display: inline-block;
-  font-size: 32px;
-  padding-right: 10px;
-  margin-bottom: 50px;
-  margin-top: 50px;
-}
-#blank-words ul li {
-  align-content: center;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-#keyboard {
-  width: 686 px;
-  align-content: center;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 40px;
-}
-#keyboard p {
-  margin-bottom: 30px;
-}
-#keyboard ul li {
-  display: inline-block;
-  font-size: 25px;
-  padding: 12px;
-  border: 3px solid black;
-  border-radius: 5px;
-  background-color: white;
-  margin: 5px;
-}
-#keyboard ul li:hover {
-  background-color: yellow;
-}
-#progressBar {
-  margin-bottom: 50px;
-}
-/* List Element that contains the rules  */
-nav ul li {
-    color: sandybrown;
-    cursor: pointer;
-    font-size: 12px;
-}
 
-
-.list{
-    color: black;
-    margin: 10px;
-}
-#thing{
-    font-size: 20px;
-}
-
- #thing-text{
-    position: absolute;
-    left: 0;
-    transition: opacity 1s;
-    display: none;
-    width: 50%;
-    background-color: sandybrown;
-    border-radius: 7px;
-    padding: 20px 0;
-    text-align: left;
-    border-style: solid;
-    border-color:white transparent transparent transparent;
-    margin-left: -5px;
-    border-width: 5px;
-}
-#thing:hover ~ #thing-text{
-    display: block;
-}
-
-/*  black background/colums on the index page -zahra */
-
-body.has-overlay::after {
+body.has-overlay::after { /*  black background/colums on the index page -zahra */
     content: "";
     display: block;
     position: fixed;
@@ -295,27 +292,22 @@ body.has-overlay::after {
     left: 0;
     background-color:black;
 }
-
 #background{
     position: relative;
     z-index: 2;
     text-align: center;
 }
 
-#trying{
-    position: relative;
-    z-index: 2;
-    text-align: center;
-}
-
-/*
-THIS STYLING IS FOR THE WELCOME/TITLE PAGE-ZAHRA */
+/**************************************************************************************************************/
+/**************************************************************************************************************/
+/*                                         About Us
+/**************************************************************************************************************/
+/**************************************************************************************************************/
 
 html{
     background-color: black;
- 
 }
-   div h1 {
+div h1 {
     line-height: .95;
     color: sandybrown;
     font-weight: 900;
@@ -323,9 +315,8 @@ html{
     text-transform: uppercase;
     pointer-events: none;
 
-  }
-
-  .center {
+}
+.center {
     position: absolute;
     top: 0;
     left: 0;
@@ -335,9 +326,8 @@ html{
     z-index: 2;
     text-align: center;
     background-color: gray;
-  }
-
-  .play {
+}
+.play {
     margin: 0 auto;
     margin-top: 10%;
     width: 170px;
@@ -348,7 +338,6 @@ html{
     background: none;
     font-size: 16px;
     line-height: 54px;
-    color: #fff;
     letter-spacing: .25em;
     text-decoration: none;
     font-weight: 600;
@@ -359,14 +348,20 @@ html{
     -moz-appearance: none;
     appearance: none;
     cursor: pointer;
-  }
-
-  .play:hover {
-    background: #66fcf1;
-    color: #10151B;
-  }
-
-  .about {
+}
+.play a{
+text-decoration: none;
+color: #fff;
+}
+.about a {
+text-decoration: none;
+color: #fff;
+}
+.play:hover {
+background: #66fcf1;
+color: #10151B;
+}
+.about {
     margin: 0 auto;
     margin-top: 5%;
     width: 170px;
@@ -388,12 +383,11 @@ html{
     -moz-appearance: none;
     appearance: none;
     cursor: pointer;
-  }
-
-  .about:hover {
+}
+.about:hover {
     background: #66fcf1;
     color: #10151B;
-  }
+}
  
 
   
